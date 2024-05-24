@@ -1,0 +1,2 @@
+Dữ liệu lấy của 3 ngân hàng ở Việt Nam: Vietcombank, BIDV, Eximbank 
+từ ngày 01-03-2019 tới 01-03-2024
