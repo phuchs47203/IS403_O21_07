@@ -1,6 +1,26 @@
 \section{Phương pháp nghiên cứu}
 \subsection{Linear Regression}
-Nội dung.
+Hồi quy tuyến tính là một kỹ thuật thống kê được sử dụng để mô hình hóa mối liên hệ giữa một biến phụ thuộc và một hoặc nhiều biến độc lập. Phương pháp này giả định một mối quan hệ tuyến tính và cố gắng xác định đường thẳng tối ưu nhằm giảm thiểu sự chênh lệch giữa các giá trị dự đoán và quan sát được. Hồi quy tuyến tính được áp dụng để dự đoán kết quả và hiểu về ảnh hưởng của các biến trong các lĩnh vực như kinh tế, tài chính và học máy. Phương pháp này, được giới thiệu bởi nhà thống kê nổi tiếng Sir Francis Galton vào cuối thế kỷ 19, nhằm xác định một phương trình tuyến tính đại diện cho mối quan hệ. Công thức cho hồi quy tuyến tính thường được biểu diễn dưới dạng một phương trình mô tả đường thẳng tối ưu này được biết đến là:
+\[y=\beta_0+\beta_1x+\varepsilon\]
+Trong đó:\\
+	\indent\textbullet\ \(y\) là giá trị dự đoán của biến phụ thuộc (y).\\
+	\indent\textbullet\ \(x\) là các biến độc lập.\\
+	\indent\textbullet\ \(\beta_0\) là giá trị dự đoán của y khi X bằng 0 (intercept).\\
+	\indent\textbullet\ \(\beta_1\) là hệ số hồi quy – cho biết giá trị dự đoán y thay đổi như thế nào khi X thay đổi.\\
+	\indent\textbullet\ \(\varepsilon\) là sai số.\\
+\\
+Công thức tính \(\beta_0\) và \(\beta_1\):\\
+\[\beta_1=\frac{\sum\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sum\left(x_i-\bar{x}\right)^2}\]
+\[\beta_0=\bar{y}-\beta_1\bar{x}\]
+Trong đó:\\
+	\indent\textbullet\ \(x_i\) và \(y_i\) là các giá trị cụ thể của biến độc lập và phụ thuộc.\\
+	\indent\textbullet\ \(\bar{x}\) và \(\bar{y}\) là giá trị trung bình của \(x\) và \(y\) tương ứng.\\
+\\
+Công thức tính \(R^2\):
+\[R^2=1-\frac{\sum\left(y_i-\hat{y_i}\right)^2}{\sum\left(y_i-\bar{y}\right)^2}\]
+Trong đó:\\
+	\indent\textbullet\ \(\hat{y_i}\) là giá trị dự đoán của \(y_i\)\\
+	\indent\textbullet\ \(\bar{y_i}\) là giá trị trung bình của \(y\)\\
 
 % =========================================
 \subsection{ARIMA}
