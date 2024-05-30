@@ -4,7 +4,9 @@ import pandas as pd
 
 def read_dataset(dataset_name):
     file_path = './data/Raw_Stock_Data/Data_01_03_2019'
-    return pd.read_csv(f'{file_path}/{dataset_name}.csv')
+    full_file_path = os.path.join(file_path, f'{dataset_name}.csv')
+    assert os.path.exists(full_file_path), f"File '{dataset_name}.csv' does not exist."
+    return pd.read_csv(full_file_path)
 
 def save_processed_data(dataset_name, data):
     processed_path = f'./data/{dataset_name}/'
@@ -39,19 +41,22 @@ def process_data(stock_data):
     return df
 
 def main(args):
-    dataset_name = args.dataset_name
+    dataset_names = args.dataset_names
 
-    # read data
-    stock_data = read_dataset(dataset_name)
-    processed_data = process_data(stock_data)
+    for dataset_name in dataset_names:
+        # read data
+        stock_data = read_dataset(dataset_name)
+        processed_data = process_data(stock_data)
 
-    # save data
-    save_processed_data(dataset_name, processed_data)
+        # save data
+        save_processed_data(dataset_name, processed_data)
+        print(f'./data/{dataset_name}/df_y.csv')
 
 def parse_args():
     desc = "Data Preprocessing"
     parser = argparse.ArgumentParser(description=desc)
-    parser.add_argument('--dataset_name', type=str, help='Dataset name (CSV)')
+    # parser.add_argument('--dataset_name', type=str, help='Dataset name (CSV)')
+    parser.add_argument('--dataset_names', nargs='+', type=str, help='Dataset names (CSV)')
     return parser.parse_args()
 
 if __name__ == '__main__':
