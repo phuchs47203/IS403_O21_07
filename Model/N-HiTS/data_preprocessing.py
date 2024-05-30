@@ -9,7 +9,7 @@ def read_dataset(dataset_name):
 def save_processed_data(dataset_name, data):
     processed_path = f'./data/{dataset_name}/'
     os.makedirs(processed_path, exist_ok=True)
-    output_file = os.path.join(processed_path, 'Y_df.csv')
+    output_file = os.path.join(processed_path, 'df_y.csv')
     with open(output_file, 'w') as f:
         data.to_csv(f, index=False)
 
@@ -34,7 +34,6 @@ def process_data(stock_data):
     full_date = pd.DataFrame({'ds': filtered_dates})
 
     df = pd.merge(full_date,df,on='ds',how='left')
-    # df.fillna(method='ffill', inplace=True)
     df.ffill(inplace=True)
 
     return df
