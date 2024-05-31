@@ -1,0 +1,4 @@
+PWD C:\BDA_Code\IS403_O21_07\Latex\sections\main-contents
+INPUT C:\Users\Admin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\BDA_Code\IS403_O21_07\Latex\sections\main-contents\chapter-3.tex
+OUTPUT chapter-3.log
