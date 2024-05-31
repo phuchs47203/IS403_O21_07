@@ -24,7 +24,42 @@ Trong đó:\\
 
 % =========================================
 \subsection{ARIMA}
-Nội dung.
+Autoregressive Integrated Moving Average (ARIMA) là thuật toán thống kê phổ biến dùng để dự báo dữ liệu chuỗi thời gian, được kết hợp giữa Tự hồi quy (Autogressive - AR), Trung bình trượt (Moving Average – MA) và tích hợp sai phân (Integrated – I).
+\par
+Tự hồi quy (AR) là mô hình tìm mối quan hệ giữa giá trị dữ liệu hiện tài và giá trị dữ liệu trước đó, còn được gọi là độ trễ. Mô hình có phương trình như sau:
+\[y_{t} = c + \ \phi_{1}y_{t - 1} + \ \phi_{2}y_{t - 2} + \ldots + \ \phi_{p}y_{t - p} + \ \varepsilon_{t}\]
+Trong đó:\\
+    \indent\textbullet\ \(y_{t}\) là quan sát tại thời điểm t\\
+    \indent\textbullet\ \(c\) là hệ số chặn\\
+    \indent\textbullet\ \(\phi_{1},\ \ldots\ ,\ \phi_{p}\) là các tham số cần ước tính\\
+    \indent\textbullet\ \(y_{t - 1},\ ...,\ y_{t - p}\) là các giá trị dự báo tại p bước thời điểm trước đó\\
+    \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng\\
+
+Sai phân (Integrated – I) là biểu thị sự khác biệt của các quan sát để làm cho chuỗi thời gian có tính dừng, nghĩa là các giá trị dữ liệu được thay thế bằng hiệu giữa giá trị dữ liệu hiện tại và trước đó.
+\[y_{t} = \ Y_{t} - \ Y_{t - d}\]
+Trong đó:\\
+    \indent\textbullet\ \(y_{t}\) là sai phân tại thời điểm t\\
+    \indent\textbullet\ \(Y_{t},\ \ldots,\ Y_{t - d}\) là các quan sát tại thời điểm hiện tại và trước đó\\
+
+Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ.
+\[y_{t} = c + \ \theta_{1}\varepsilon_{t - 1} + \ \theta_{2}\varepsilon_{t - 2} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
+Trong đó:\\
+    \indent\textbullet\ \(y_{t}\) là trung bình trượt tại thời điểm t\\
+    \indent\textbullet\ \(c\) là hệ số chặn\\
+    \indent\textbullet\ \(\theta_{1},\ \ldots\ ,\ \theta_{p}\) là các tham số cần ước tính\\
+    \indent\textbullet\ \(\varepsilon_{t - 1},\ \ldots,\ \varepsilon_{t - p}\) là các lỗi dữ báo tại q bước thời điểm trước đó\\
+    \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng\\
+
+Kết hợp cả ba mô hình trên thì có thể đưa ra phương trình cho mô hình ARIMA như sau:
+\[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
+Trong đó:\\
+    \indent\textbullet\ \(y_{t}\) là quan sát tại thời điểm t\\
+    \indent\textbullet\ \(c\) là giá trị hằng\\
+    \indent\textbullet\ \(\phi_{p}\) là tham số của AR\\
+    \indent\textbullet\ \(\theta_{q}\) là tham số của MA\\
+    \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng\\
+
+Các giá trị tham số của mô hình ARIMA (p, d, q), AR(p) có thể được tính bằng Hàm tự tương quan (Autocorrelation Function – ACF), I(d) có thể sử dụng các loại kiểm định như Dickey Fuller (DF) hoặc Augmented Dickey Fuller (ADF) nếu như chuỗi thời gian chưa dừng và MA(q) có thể sử dụng Hàm tự tương quan một phần (Partial Autocorrelation Function PACF). Những hàm này giúp tính toán các tham số mà có thể được sử dụng trong dự báo dữ liệu trong mô hình ARIMA.
 
 % =========================================
 \subsection{RNN}
@@ -96,7 +131,18 @@ Nội dung.
 
 % =========================================
 \subsection{VARMA}
-Nội dung. 
+Vector Autoregressive Moving Average (VARMA) là mô hình thống kê dùng để mô hình hóa và dự đoán chuỗi dữ liệu có nhiều biến . VARMA là sự kết hợp giữa hai mô hình: Vector tự hồi quy (VAR) là mô hình dùng để kiểm tra các mối quan hệ giữa các biến tương tác với nhau. Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ. 
+\par
+Khi kết hợp hai mô hình lại thì mô hình VARMA được định nghĩa như sau:
+\[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + CD_{t} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - p} + \ \varepsilon_{t}\]
+Trong đó:\\
+    \indent\textbullet\ \(y_{t}\) là vector của các biến chuỗi thời gian tại thời điểm t\\
+    \indent\textbullet\ \(c\) là vector độ lệch không đổi trong mỗi phương trình\\
+    \indent\textbullet\ \(\phi_{1},\ \ldots\ ,\ \phi_{p}\) là ma trận tham số của AR với i = 1, …, p\\
+    \indent\textbullet\ \(C\) là ma trận hệ số của các biến hồi quy có khả năng xác định\\
+    \indent\textbullet\ \(D_{t}\) là vector chứa các biến hồi quy xác định thích hợp như biến không đổi, xu hướng hoặc mùa vụ\\
+    \indent\textbullet\ \(\theta_{1},\ \ldots\ ,\ \theta_{p}\) là ma trận tham số của MA với j = 1, … , q\\
+    \indent\textbullet\ \(\varepsilon_{t}\) là vector lỗi ngẫu nhiêu tại thời điểm t\\
 
 % =========================================
 \subsection{Kalman Filter}
