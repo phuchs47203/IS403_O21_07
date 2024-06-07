@@ -67,10 +67,24 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
 Trong nghiên cứu của chúng tôi, chúng tôi đã sử dụng các công cụ phân tích thống kê khác nhau trong Python để hiểu rõ hơn dữ liệu và đưa ra những kết luận ý nghĩa. Các công cụ này, bao gồm numpy, pandas, sklearn và matplotlib.pyplot, đã giúp chúng tôi khám phá ra những phát hiện đáng chú ý. Để biết kết quả chi tiết, vui lòng xem bảng mô tả và biểu đồ được cung cấp.
 % end hoang
 
-% long
 \subsection{Tỷ lệ phân chia tập dữ liệu}
-Nội dung.
+Trong đồ án, phân chia dữ liệu thành hai tập: tập train và tập test theo các tỷ lệ 7:3, 8:2, 9:1. Tỷ lệ tiêu chuẩn là 7:3, tức là sử dụng 70\% dữ liệu cho việc train và 30\% cho việc test. Tỷ lệ này thường được sử dụng bởi vì với một bộ dữ liệu lớn và cần đạt được độ chính xác cao trong đánh giá mô hình, tỷ lệ 7:3 có thể tận dụng tối đa thông tin từ dữ liệu train và với một tập test chiếm 30\% trong tỷ lệ này, vẫn còn đủ dữ liệu để đánh giá hiệu quả của mô hình một cách đáng tin cậy. Bên cạnh đó, tỷ lệ 8:2 được coi là tỷ lệ tốt nhất cho việc phân chia tập train và tập test, trong đó sử dụng 80\% dữ liệu cho việc train và 20\% cho test. Tỷ lệ này thường được sử dụng khi bộ dữ liệu có kích thước lớn và tỷ lệ 8:2 sẽ giúp mô hình được train với nhiều thông tin hơn từ dữ liệu. Với một tập test chiếm 20\% quy mô, vẫn còn một lượng đáng kể dữ liệu để đánh giá hiệu quả của mô hình. Điều này giúp đảm bảo tính tin cậy và đại diện của kết quả đánh giá. Cuối cùng, tỷ lệ 9:1 có nghĩa là 90\% dữ liệu được sử dụng cho train, 10\% cho test. Tỷ lệ train gần với test sẽ giúp mô hình học được nhiều thông tin hơn từ tập huấn luyện và đánh giá hiệu quả tốt trên tập kiểm tra.
 
 \subsection{Các chỉ số đánh giá mô hình}
-Nội dung.
-% end long
+Để đánh giá độ chính xác của các mô hình, chúng tôi sử dụng ba tham số là Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) và Root Mean Squared Error (RMSE). Thuật toán có giá trị thấp nhất trong ba thuật toán sẽ có độ chính xác tốt nhất. Dưới đây là công thức cho MAE, MAPE và RMSE.
+\\ \\ \\  % =)))) suyt
+\par
+\textbf{RMSE} (Root Mean Squared Error) là một thước đo hiệu suất hoặc độ chính xác của một mô hình dự báo, được tính bằng cách lấy căn bậc hai của trung bình bình phương sai số giữa các giá trị dự đoán và các giá trị thực tế.
+\[
+\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+\]
+\par
+\textbf{MAPE}  (Mean Absolute Percent Error), còn được gọi là độ lệch phần trăm tuyệt đối trung bình (MAPD), là thước đo độ chính xác dự đoán của phương pháp dự báo trong thống kê. Nó thường biểu thị độ chính xác dưới dạng tỷ lệ được xác định bởi công thức:
+\[
+\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100
+\]
+\par
+\textbf{MAE} (Mean Absolute Error) là một thước đo hiệu suất hoặc độ chính xác của một mô hình dự báo, được đo bằng cách tính trung bình giá trị tuyệt đối của sai số giữa giá trị thực tế và giá trị dự đoán.
+\[
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\]

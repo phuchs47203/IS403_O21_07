@@ -228,7 +228,61 @@
 \end{figure}
 
 \subsubsection{GRU}
-Nội dung.
+\begin{figure}[H]
+    \centering
+    % BIDV
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/BIDV_GRU_7-3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/BIDV_GRU_8-2.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/BIDV_GRU_9-1.png}
+    \end{minipage}
+    \hfill
+    % VCB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/VCB_GRU_7-3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/VCB_GRU_8-2.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/VCB_GRU_9-1.png}
+    \end{minipage}
+    \hfill
+    % EIB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/EXIM-GRU_7-3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/EXIM-GRU_7-3.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/EXIM-GRU_7-3.png}
+    \end{minipage}
+    \hfill
+    
+    \caption{Kết quả chạy của mô hình GRU}
+    \label{fig:GRU}
+\end{figure}
+
 
 
 \subsubsection{VARMA}
@@ -289,7 +343,60 @@ Nội dung.
 
 
 \subsubsection{Kalman Filter}
-Nội dung.
+\begin{figure}[H]
+    \centering
+    % BIDV
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_BIDV_7_3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_BIDV_8_2.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_BIDV_9_1.png}
+    \end{minipage}
+    \hfill
+    % VCB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_VCB_7_3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_VCB_7_3.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_VCB_7_3.png}
+    \end{minipage}
+    \hfill
+    % EIB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_EXIM_7_3.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_EXIM_7_3.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/result/KF_EXIM_7_3.png}
+    \end{minipage}
+    \hfill
+    
+    \caption{Kết quả chạy của mô hình Kalman Filter}
+    \label{fig:KalmanFilter}
+\end{figure}
 
 \subsubsection{Meta-Learning}
 \begin{figure}[H]
@@ -407,21 +514,70 @@ Nội dung.
 \subsubsection{N-HiTS}
 Nội dung.
 
-% ===============================
 \subsection{Đánh giá mô hình} 
 % BIDV table
 \subsubsection{Evaluation models with BIDV dataset}
-Nội dung.
+\begin{table}[H]
+    \centering
+    \caption{BIDV Dataset's Evaluation}
+    \begin{tabular}{|c|c|c|c|c|}
+         \hline
+         \multicolumn{5}{|c|}{\textbf{BIDV Dataset's Evaluation}}\\
+         \hline
+         \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
+         \hline
+         \multirow{2}{*}{LN} & 7:3 & 5048.021&4097.116&10.33 \\ & 8:2 & 5886.111&4898.629&11.35 \\ & \textbf{9:1} & \textbf{5467.464} & \textbf{4056.826} & \textbf{8.91}\\
+         \hline
+         \multirow{2}{*}{ARIMA} & 7:3 & 6415.549&5359.832&13.4\\ & 8:2 & 4180.913&2732.765&6.15 \\ & \textbf{9:1} & \textbf{5209.117} & \textbf{3915.273} & \textbf{8.75}\\
+         \hline
+         \multirow{2}{*}{VARMA} & 7:3 & 10276.337&9091.532&22.39\\ & 8:2 & 8396.528&6871.634&15.96 \\ & \textbf{9:1} & \textbf{7649.079} & \textbf{5448.156} & \textbf{11.82}\\     
+         \hline
+    \end{tabular}
+    \label{bidvresult}
+\end{table}
 
 % VCB table
 \subsubsection{Evaluation models with VCB dataset}
-Nội dung.
+\begin{table}[H]
+    \centering
+    \caption{VCB Dataset's Evaluation}
+    \begin{tabular}{|c|c|c|c|c|}
+         \hline
+         \multicolumn{5}{|c|}{\textbf{VCB Dataset's Evaluation}}\\
+         \hline
+         \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
+         \hline
+         \multirow{2}{*}{LN} & 7:3 & 7643.427&6473.297&8.5 \\ & 8:2 & 9921.989&8984.306&10.36 \\ & \textbf{9:1} & \textbf{7501.388} & \textbf{6871.341} & \textbf{7.75}\\
+         \hline
+         \multirow{2}{*}{ARIMA} & 7:3 & 14267.63&12485.62&15.17\\ & 8:2 & 7893.44&6773.56&7.76 \\ & \textbf{9:1} & \textbf{3359.83} & \textbf{2580.8} & \textbf{2.91}\\
+         \hline
+         \multirow{2}{*}{VARMA} & 7:3 & 20748.637&18022.257&21.61\\ & 8:2 & 17857.495&15561.021&17.83 \\ & \textbf{9:1} & \textbf{6753.655} & \textbf{5332.02} & \textbf{5.96}\\
+         \hline
+    \end{tabular}
+    \label{vcbresult}
+\end{table}
 
 % EIB table
 \subsubsection{Evaluation models with EIB dataset}
-Nội dung.
+\begin{table}[H]
+    \centering
+    \caption{EIB Dataset's Evaluation}
+    \begin{tabular}{|c|c|c|c|c|}
+         \hline
+         \multicolumn{5}{|c|}{\textbf{EIB Dataset's Evaluation}}\\
+         \hline
+         \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
+         \hline
+         \multirow{2}{*}{LN} & 7:3 & 7370.951&6950.316&39.31 \\ & 8:2 & 6365.999&6245.667&35.25 \\ & \textbf{9:1} & \textbf{3886.225} & \textbf{3658.429} & \textbf{20.01}\\
+         \hline
+         \multirow{2}{*}{ARIMA} & 7:3 & 3743.56&3329.53&18.85\\ & 8:2 & 3355.11&3009.95&16.14 \\ & \textbf{9:1} & \textbf{2085.35} & \textbf{1926.82} & \textbf{10.55}\\
+         \hline
+         \multirow{2}{*}{VARMA} & 7:3 & 2747.977&2143.381&11.71\\ & 8:2 & 3695.961&3300.537&17.68 \\ & \textbf{9:1} & \textbf{1590.236} & \textbf{1345.089} & \textbf{7.39}\\       
+         \hline
+    \end{tabular}
+    \label{eibresult}
+\end{table}
 
-% ===============================
 
 
 
@@ -659,10 +815,62 @@ Nội dung.
 \end{figure}
 
 
-
-
 \subsubsection{GRU}
-Nội dung.
+\begin{figure}[H]
+    \centering
+    % BIDV
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/BIDV_GRU_7-3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/BIDV_GRU_8-2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/BIDV_GRU_9-1_30days.png}
+    \end{minipage}
+    \hfill
+    % VCB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/VCB_GRU_7-3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/VCB_GRU_8-2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/VCB_GRU_9-1_30days.png}
+    \end{minipage}
+    \hfill
+    % EIB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/EXIM-GRU_7-3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/EXIM-GRU_8-2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/EXIM-GRU_9-1_30days.png}
+    \end{minipage}
+    \hfill
+    
+    \caption{Dự đoán 30 ngày tới của mô hình GRU}
+    \label{fig:GRU_30days}
+\end{figure}
+
 
 
 
@@ -727,9 +935,60 @@ Nội dung.
 
 
 \subsubsection{Kalman Filter}
-Nội dung.
-
-
+\begin{figure}[H]
+    \centering
+    % BIDV
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_BIDV_7_3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_BIDV_8_2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_BIDV_9_1_30days.png}
+    \end{minipage}
+    \hfill
+    % VCB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_VCB_7_3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_VCB_8_2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_VCB_9_1_30days.png}
+    \end{minipage}
+    \hfill
+    % EIB
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_EXIM_7_3_30days.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_EXIM_8_2_30days.png}
+    \end{minipage}
+    \hfill
+        \begin{minipage}{0.15\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{resources/chapter-5/predicted/KF_EXIM_9_1_30days.png}
+    \end{minipage}
+    \hfill
+    
+    \caption{Dự đoán 30 ngày tới của mô hình Kalman Filter}
+    \label{fig:kalman_filter_30days}
+\end{figure}
 
 
 

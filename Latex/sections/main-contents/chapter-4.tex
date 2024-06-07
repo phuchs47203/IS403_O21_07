@@ -122,9 +122,29 @@ Nhận xét: \( 0 < f_t, i_t, o_t < 1 \); \( b_f, b_i, b_o \) là các hệ số
 \( h_t = o_t \ast \tanh\left(c_t\right) \), output gate quyết định xem cần lấy bao nhiêu từ cell state để trở thành output của hidden state. Ngoài ra \( h_t \) cũng được dùng để tính ra output \( y_t \) cho state \( t \).
 
 
-% =========================================
 \subsection{GRU}
-Nội dung.
+GRU, hoặc Gated Recurrent Unit, là một loại mạng nơ-ron hồi tiếp (RNN) được giới thiệu bởi Cho và đồng nghiệp vào năm 2014 như một phương án đơn giản hơn so với mạng LSTM (Long Short-Term Memory). Tương tự như LSTM, GRU có thể xử lý dữ liệu tuần tự như văn bản, âm thanh và dữ liệu chuỗi thời gian.
+Ý tưởng cơ bản của GRU là sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn của mạng tại mỗi bước thời gian. Các cơ chế cổng được sử dụng để kiểm soát luồng thông tin vào và ra khỏi mạng. GRU có hai cơ chế cổng, gọi là cổng thiết lập lại (reset gate) và cổng cập nhật (update gate).
+\par
+Cổng thiết lập lại xác định mức độ của trạng thái ẩn trước đó nên được quên, trong khi cổng cập nhật xác định mức độ của đầu vào mới nên được sử dụng để cập nhật trạng thái ẩn. Đầu ra của GRU được tính toán dựa trên trạng thái ẩn đã được cập nhật.LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài.
+\par
+Tóm lại, mạng GRU là một loại RNN sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn tại mỗi bước thời gian, cho phép chúng hiệu quả mô hình dữ liệu tuần tự. Chúng đã được chứng minh là hiệu quả trong nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên, như mô hình ngôn ngữ, dịch máy và nhận dạng giọng nói.
+\par
+Phương trình được sử dụng để tính toán cổng thiết lập lại (\(r_t\)), cổng cập nhật (\(z_t\)), và trạng thái ẩn (\(h_t\)) của một Đơn vị Hồi tiếp Có Cổng (GRU) tại bước thời gian \(t\):
+
+\begin{minipage}{0.5\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{resources/chapter-4/gru-1.png}
+\end{minipage}
+
+Trong đó:\\
+    \indent\textbullet\ \(x_t\) đại diện cho đầu vào tại bước thời gian \(t\)\\
+    \indent\textbullet\ \(h_{t-1}\)  là trạng thái ẩn trước đó \\
+    \indent\textbullet\ \(W_r\), \(W_z\) và \(W\) là các ma trận trọng số mà mạng học được trong quá trình huấn luyện\\
+    \indent\textbullet\ \(b_r\), \(b_z\) và \(b\) là các vector độ lệch\\
+    \indent\textbullet\ \(\sigma\) biểu thị cho hàm sigmoid
+    
+% =========================================
 
 % =========================================
 \subsection{VARMA}
@@ -142,8 +162,40 @@ Trong đó:\\
     \indent\textbullet\ \(\varepsilon_{t}\) là vector lỗi ngẫu nhiêu tại thời điểm t\\
 
 % =========================================
+% =========================================
 \subsection{Kalman Filter}
-Nội dung.
+\subsubsection{Định nghĩa}
+Kalman Filter là một thuật toán tổng quát được sử dụng để ước lượng các tham số hệ thống. Nó có thể sử dụng các đo lường không chính xác hoặc nhiễu để ước lượng trạng thái của biến đó hoặc một biến không quan sát được khác với độ chính xác cao hơn.
+\par
+Sức mạnh thực sự của Kalman Filter không phải là làm mịn các đo lường. Mà đó là khả năng ước lượng các tham số hệ thống mà không thể được đo lường hoặc quan sát với độ chính xác. Các ước lượng có độ chính xác cải thiện trong các hệ thống hoạt động thời gian thực, cho phép hệ thống kiểm soát mạnh mẽ hơn và do đó có nhiều khả năng hơn.
+
+\subsubsection{Công thức}
+
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-1.png}
+\end{minipage}
+\\ \\
+Trong đó:\\
+    \indent\textbullet\ K là Kalman Gain\\
+    \indent\textbullet\ P là Ma trận hiệp phương sai\\
+    \indent\textbullet\ H là ma trận quan sát \\
+    \indent\textbullet\ \(H^T\) là mà trận chuyên vị của H\\
+    \indent\textbullet\ \(Z_k\) là giá trị đo được (tại thời điểm k)\\
+    \indent\textbullet\ \(X_k\) là giá trị dự đoán (tại thời điểm k)
+
+\subsubsection{Cách thuật toán hoạt động}
+    \indent\textbullet\ Bước 1: Khởi tạo giá trị ban đầu của X và P bằng với giá trị đầu tiên của bộ dữ liệu\\
+    \indent\textbullet\ Bước 2: Sau đó sẽ tiến hành dự đoán \(X_{k^-}\) và \(P_{k^-}\) (Giá trị trước khi đo đạc)\\
+    \indent\textbullet\ Bước 3: Tính toán lại Kalman Gain\\
+    \indent\textbullet\ Bước 4: Sau khi đo lường được giá trị \(Z_k\) thì sẽ tính toán lại \(X_k\)(Giá trị dự đoán)\\
+    \indent\textbullet\ Bước 5: Sau đó sẽ tính toán lại P và lặp lại từ bước 2\\
+
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-2.png}
+\end{minipage}
+\\ \\
 
 % =========================================
 \subsection{Meta-learning}
