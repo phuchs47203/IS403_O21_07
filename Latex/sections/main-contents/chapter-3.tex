@@ -11,19 +11,43 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
 \item \textbf{Adj Close}: Giá đóng cửa được điều chỉnh, bao gồm bất kỳ hành động doanh nghiệp nào như cổ tức hoặc chia cổ phiếu.
 \item \textbf{Volume}: Khối lượng giao dịch, chỉ ra tổng số cổ phiếu được giao dịch vào một ngày cụ thể.
 \end{itemize}
-\subsection{Descriptive Statistics}
+\subsection{Thống kê mô tả}
+\begin{table}[H]
+    \centering
+    \caption{Thống kê mô tả}
+    \begin{tabular}{|c|c|c|c|}
+         \hline
+         \rowcolor{cyan}\centering\  & BIDV & Eximbank & Vietcombank\\\hline
+         \multirow{1}{*}{Count} & 1306 & 1306 & 1306 \\\hline
+         \multirow{1}{*}{Mean} & 33335.27142 & 16673.73704 & 66674.47299 \\\hline
+         \multirow{1}{*}{Std} & 7058.435047 & 4257.231701 & 13618.83797 \\\hline
+         \multirow{1}{*}{Min} & 21590.11133 & 10346.04492 & 37957.3125 \\\hline
+         \multirow{1}{*}{Q1} & 28292.92188 & 12394.06738 & 56604.17578 \\\hline
+         \multirow{1}{*}{Q2} & 31397.38281 & 16949.15234 & 65164.47656 \\\hline
+         \multirow{1}{*}{Q3} & 38601.47266 & 19385.59375 & 75508.04297 \\\hline
+         \multirow{1}{*}{Max}  & 54400 & 29661.01758  & 97400 \\\hline
+         \multirow{1}{*}{Mode} & 28222.36719 & 12146.89258 & 55077.91797 \\\hline
+         \multirow{1}{*}{Median} & 31397.38281 & 16949.15234 & 65164.47656 \\\hline
+         \multirow{1}{*}{Var} & 49821505.31 & 18124021.75 & 185472747.7 \\\hline
+         \multirow{1}{*}{Kurtosis} & 0.23806089 & -0.807813649 & -0.610997452 \\\hline
+         \multirow{1}{*}{Skewness} & 0.840622466 & 0.442884414 & 0.336313457 \\\hline
+         \multirow{1}{*}{CV} & 0.21174074 & 0.255325587 & 0.204258652 \\\hline
+    \end{tabular}
+    \label{descriptive-stats}
+\end{table}
+
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Boxplot_BIDV.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Boxplot_BIDV.png}
     \caption{BIDV stock price's boxplot}
     \label{fig:bidv_boxplot}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Histogram_BIDV.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Histogram_BIDV.png}
     \caption{BIDV stock price's histogram}
     \label{fig:bidv_histogram}
     \end{minipage}
@@ -33,14 +57,14 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
     \centering
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Boxplot_Eximbank.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Boxplot_Eximbank.png}
     \caption{Eximbank stock price's boxplot}
     \label{fig:eximbank_boxplot}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Histogram_Eximbank.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Histogram_Eximbank.png}
     \caption{Eximbank stock price's histogram}
     \label{fig:eximbank_histogram}
     \end{minipage}
@@ -50,14 +74,14 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
     \centering
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Boxplot_Vietcombank.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Boxplot_Vietcombank.png}
     \caption{VCB stock price's boxplot}
     \label{fig:vcb_boxplot}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
     \centering
-    \includegraphics[width=1\textwidth]{resources/chapter-3/Histogram_Vietcombank.jpg}
+    \includegraphics[width=1\textwidth]{resources/chapter-3/newdata/Histogram_Vietcombank.png}
     \caption{VCB stock price's histogram}
     \label{fig:vcb_histogram}
     \end{minipage}
