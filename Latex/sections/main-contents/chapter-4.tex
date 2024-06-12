@@ -1,26 +1,23 @@
 \section{Phương pháp nghiên cứu}
 \subsection{Linear Regression}
-Hồi quy tuyến tính là một kỹ thuật thống kê được sử dụng để mô hình hóa mối liên hệ giữa một biến phụ thuộc và một hoặc nhiều biến độc lập. Phương pháp này giả định một mối quan hệ tuyến tính và cố gắng xác định đường thẳng tối ưu nhằm giảm thiểu sự chênh lệch giữa các giá trị dự đoán và quan sát được. Hồi quy tuyến tính được áp dụng để dự đoán kết quả và hiểu về ảnh hưởng của các biến trong các lĩnh vực như kinh tế, tài chính và học máy. Phương pháp này, được giới thiệu bởi nhà thống kê nổi tiếng Sir Francis Galton vào cuối thế kỷ 19, nhằm xác định một phương trình tuyến tính đại diện cho mối quan hệ. Công thức cho hồi quy tuyến tính thường được biểu diễn dưới dạng một phương trình mô tả đường thẳng tối ưu này được biết đến là:
+Hồi quy tuyến tính là một kỹ thuật thống kê được sử dụng để mô hình hóa mối liên hệ giữa một biến phụ thuộc và một hoặc nhiều biến độc lập. Phương pháp này giả định một mối quan hệ tuyến tính và cố gắng xác định đường thẳng tối ưu nhằm giảm thiểu sự chênh lệch giữa các giá trị dự đoán và quan sát được. Công thức cho hồi quy tuyến tính thường được biểu diễn dưới dạng một phương trình mô tả đường thẳng tối ưu:
 \[y=\beta_0+\beta_1x+\varepsilon\]
 Trong đó:\\
 	\indent\textbullet\ \(y\) là giá trị dự đoán của biến phụ thuộc (y).\\
 	\indent\textbullet\ \(x\) là các biến độc lập.\\
 	\indent\textbullet\ \(\beta_0\) là giá trị dự đoán của y khi X bằng 0 (intercept).\\
-	\indent\textbullet\ \(\beta_1\) là hệ số hồi quy – cho biết giá trị dự đoán y thay đổi như thế nào khi X thay đổi.\\
+	\indent\textbullet\ \(\beta_1\) là hệ số hồi quy.\\
 	\indent\textbullet\ \(\varepsilon\) là sai số.\\
-\\
-Công thức tính \(\beta_0\) và \(\beta_1\):\\
-\[\beta_1=\frac{\sum\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sum\left(x_i-\bar{x}\right)^2}\]
-\[\beta_0=\bar{y}-\beta_1\bar{x}\]
+\\Công thức tính \(\beta_0\) và \(\beta_1\):\\
+\[\beta_1=\frac{\sum\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sum\left(x_i-\bar{x}\right)^2}, \beta_0=\bar{y}-\beta_1\bar{x}\]
 Trong đó:\\
-	\indent\textbullet\ \(x_i\) và \(y_i\) là các giá trị cụ thể của biến độc lập và phụ thuộc.\\
-	\indent\textbullet\ \(\bar{x}\) và \(\bar{y}\) là giá trị trung bình của \(x\) và \(y\) tương ứng.\\
-\\
-Công thức tính \(R^2\):
-\[R^2=1-\frac{\sum\left(y_i-\hat{y_i}\right)^2}{\sum\left(y_i-\bar{y}\right)^2}\]
-Trong đó:\\
-	\indent\textbullet\ \(\hat{y_i}\) là giá trị dự đoán của \(y_i\)\\
-	\indent\textbullet\ \(\bar{y_i}\) là giá trị trung bình của \(y\)\\
+	\indent\textbullet\ \(x_i\), \(y_i\) là các giá trị cụ thể của biến độc lập, phụ thuộc.\\
+	\indent\textbullet\ \(\bar{x}\), \(\bar{y}\) là giá trị trung bình của \(x\), \(y\) tương ứng.\\
+% \\\textbf{Công thức tính \(R^2\)}:
+% \[R^2=1-\frac{\sum\left(y_i-\hat{y_i}\right)^2}{\sum\left(y_i-\bar{y}\right)^2}\]
+% Trong đó:\\
+% 	\indent\textbullet\ \(\hat{y_i}\) là giá trị dự đoán của \(y_i\)\\
+% 	\indent\textbullet\ \(\bar{y_i}\) là giá trị trung bình của \(y\)\\
 
 % =========================================
 \subsection{ARIMA}
@@ -31,15 +28,15 @@ Tự hồi quy (AR) là mô hình tìm mối quan hệ giữa giá trị dữ li
 Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là quan sát tại thời điểm t\\
     \indent\textbullet\ \(c\) là hệ số chặn\\
-    \indent\textbullet\ \(\phi_{1},\ \ldots\ ,\ \phi_{p}\) là các tham số cần ước tính\\
-    \indent\textbullet\ \(y_{t - 1},\ ...,\ y_{t - p}\) là các giá trị dự báo tại p bước thời điểm trước đó\\
+    \indent\textbullet\ \(\phi_{1},\ldots,\ \phi_{p}\) là các tham số cần ước tính\\
+    \indent\textbullet\ \(y_{t - 1},...,\ y_{t - p}\) là các giá trị dự báo tại p bước trước đó\\
     \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng\\
 
-Sai phân (Integrated – I) là biểu thị sự khác biệt của các quan sát để làm cho chuỗi thời gian có tính dừng, nghĩa là các giá trị dữ liệu được thay thế bằng hiệu giữa giá trị dữ liệu hiện tại và trước đó.
+Sai phân (Integrated - I) là biểu thị sự khác biệt của các quan sát để làm cho chuỗi thời gian có tính dừng, nghĩa là các giá trị dữ liệu được thay thế bằng hiệu giữa giá trị dữ liệu hiện tại và trước đó.
 \[y_{t} = \ Y_{t} - \ Y_{t - d}\]
 Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là sai phân tại thời điểm t\\
-    \indent\textbullet\ \(Y_{t},\ \ldots,\ Y_{t - d}\) là các quan sát tại thời điểm hiện tại và trước đó\\
+    \indent\textbullet\ \(Y_{t},\ \ldots,\ Y_{t - d}\) là các quan sát tại hiện tại và trước đó\\
 
 Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ.
 \[y_{t} = c + \ \theta_{1}\varepsilon_{t - 1} + \ \theta_{2}\varepsilon_{t - 2} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
@@ -47,10 +44,10 @@ Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là trung bình trượt tại thời điểm t\\
     \indent\textbullet\ \(c\) là hệ số chặn\\
     \indent\textbullet\ \(\theta_{1},\ \ldots\ ,\ \theta_{p}\) là các tham số cần ước tính\\
-    \indent\textbullet\ \(\varepsilon_{t - 1},\ \ldots,\ \varepsilon_{t - p}\) là các lỗi dữ báo tại q bước thời điểm trước đó\\
+    \indent\textbullet\ \(\varepsilon_{t - 1},\ \ldots,\ \varepsilon_{t - p}\) là các lỗi dữ báo tại q bước trước đó\\
     \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng\\
 
-Kết hợp cả ba mô hình trên thì có thể đưa ra phương trình cho mô hình ARIMA như sau:
+Kết hợp ba mô hình trên được phương trình ARIMA:
 \[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
 Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là quan sát tại thời điểm t\\
@@ -77,23 +74,19 @@ Các giá trị tham số của mô hình ARIMA (p, d, q), AR(p) có thể đư�
     \indent\textbullet\ \(\sigma_h\), \(\sigma_y\): là các hàm kích hoạt\\
 
 Một số hàm kích hoạt phổ biến là:
-\\ \textbf{Sigmoid}
-\[f(x)=\frac{1}{1+e^{-x}}\]
-\\ \textbf{Tanh}
-\[f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
-\\ \textbf{RELU}
-\[f(x)=\{\begin{matrix}
+\[\textbf{Sigmoid:} f(x)=\frac{1}{1+e^{-x}}, 
+\ \textbf{Tanh:} f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
+\[\textbf{RELU:} f(x)=\{\begin{matrix}
 0 & \text{for } x<0 \\
 x & \text{for } x\ge0
-\end{matrix}.\]
-Thuật toán
-Đầu vào: chuỗi thời gian \(x_1\), \(x_2\), \(x_3\), … \(x_t\), nhãn thực tế tương ứng \(y_1\), \(y_2\), \(y_3\), … \(y_t\),
-Đầu ra: Tính toán hàm mất mát (Loss Function) và cập nhật các trọng số \(W_h\), \(U_h\), \(W_y\), \(b_h\), \(b_y\)
+\end{matrix}\]
+\textbf{Đầu vào}: chuỗi thời gian \(x_1\), \(x_2\), \(x_3\), ... \(x_t\), nhãn thực tế tương ứng \(y_1\), \(y_2\), \(y_3\), … \(y_t\),
+\textbf{Đầu ra}: hàm mất mát (Loss Function) và cập nhật các trọng số \(W_h\), \(U_h\), \(W_y\), \(b_h\), \(b_y\)
 \[\text{Loss Function} = \frac{1}{N} \sum_{i=1}^{N} (-y_i + \hat{y_i})^2\]
 Lặp lại quá trình trên cho đến khi hàm mất mát giảm đủ ( không thay đổi trong một số bước lặp nhất định, không thể giảm được nữa)
 % =========================================
 \subsection{LSTM}
-Mạng bộ nhớ dài-ngắn (Long Short Term Memory networks), thường được gọi là LSTM - là một dạng đặc biệt của RNN, nó có khả năng học được các phụ thuộc xa. LSTM được giới thiệu bởi Hochreiter \& Schmidhuber (1997), và sau đó đã được cải tiến và phổ biến bởi rất nhiều người trong ngành. Chúng hoạt động cực kì hiệu quả trên nhiều bài toán khác nhau nên dần đã trở nên phổ biến như hiện nay.
+Mạng bộ nhớ dài-ngắn (Long Short Term Memory networks - LSTM), là một dạng đặc biệt của RNN, nó có khả năng học được các phụ thuộc xa. LSTM được giới thiệu bởi Hochreiter \& Schmidhuber (1997), và sau đó đã được cải tiến và phổ biến bởi rất nhiều người trong ngành. Chúng hoạt động cực kì hiệu quả trên nhiều bài toán khác nhau nên dần đã trở nên phổ biến như hiện nay.
 \par
 LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài.
 \par
@@ -117,9 +110,9 @@ Nhận xét: \( 0 < f_t, i_t, o_t < 1 \); \( b_f, b_i, b_o \) là các hệ số
 \par
 \( c_t = \tanh\left(U_c \ast x_t + W_c \ast h_{t-1} + b_c\right) \).
 \par
-\( c_t = f_t \ast c_{t-1} + i_t \ast c_t \), forget gate quyết định xem cần lấy bao nhiêu từ cell state trước và input gate sẽ quyết định lấy bao nhiêu từ input của state và hidden layer của layer trước.
+\( c_t = f_t \ast c_{t-1} + i_t \ast c_t \), forget gate quyết định cần lấy bao nhiêu từ cell state trước và input gate sẽ quyết định lấy bao nhiêu từ input của state và hidden layer của layer trước.
 \par
-\( h_t = o_t \ast \tanh\left(c_t\right) \), output gate quyết định xem cần lấy bao nhiêu từ cell state để trở thành output của hidden state. Ngoài ra \( h_t \) cũng được dùng để tính ra output \( y_t \) cho state \( t \).
+\( h_t = o_t \ast \tanh\left(c_t\right) \), output gate quyết định cần lấy bao nhiêu từ cell state để trở thành output của hidden state. Ngoài ra \( h_t \) cũng được dùng để tính output \( y_t \) cho state \( t \).
 
 
 \subsection{GRU}

@@ -56,7 +56,7 @@
 \def\textbf#1{{\bf #1}}%
 \def\historyfont{\sffamily\fontencoding{T5}\fontseries{n}\fontshape{n}\fontsize{7}{8.4}\selectfont}%formata reg 7pt
 \def\doifont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{6}{7.2}\selectfont}%giovannistd-bookitalic 6pt
-\def\titlefont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{22}{25.4}\selectfont}%formata condmed 22pt
+\def\titlefont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{20}{25}\selectfont}%formata condmed 22pt
 \def\authorfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.9}{12}\selectfont}%formata medium 9.9pt
 \def\membershipfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.9}{12}\selectfont}%formata medium italic 9.9pt
 \def\addressfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{6.6}{8}\selectfont}%times roman 6.6pt

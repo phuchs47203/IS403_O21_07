@@ -571,17 +571,17 @@
 
 \subsection{Đánh giá mô hình} 
 % BIDV table
-\subsubsection{Evaluation models with BIDV dataset}
+\subsubsection{Đánh giá mô hình trên bộ dữ liệu BIDV}
 \begin{table}[H]
     \centering
-    \caption{BIDV Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu BIDV cho 5 thuật toán đầu}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{BIDV Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu BIDV}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline
-         \multirow{2}{*}{LinearRegression} & 7:3 & 7545.22&6125.68&13.75 \\ & 8:2 & 7336.11&5831.44&12.41 \\ & \textbf{9:1} & \textbf{8937.58} & \textbf{7874.29} & \textbf{15.81}\\
+         \multirow{2}{*}{\makecell{Linear\\Regression}\Gape[4pt]} & 7:3 & 7545.22&6125.68&13.75 \\ & 8:2 & 7336.11&5831.44&12.41 \\ & \textbf{9:1} & \textbf{8937.58} & \textbf{7874.29} & \textbf{15.81}\\
          \hline
          \multirow{2}{*}{ARIMA} & 7:3 & 12711.53&11427.93&26.26\\ & 8:2 & 6425.28&4707.98&9.91 \\ & \textbf{9:1} & \textbf{11133.30} & \textbf{10093.96} & \textbf{20.43}\\
          \hline
@@ -592,43 +592,43 @@
          \multirow{2}{*}{GRU} & 7:3 & 4512.19&4337.92&10.24\\ & 8:2 & 4242.52&4140.48&9.39 \\ & \textbf{9:1} & \textbf{6816.77} & \textbf{6713.13} & \textbf{14.02}\\
          \hline         
     \end{tabular}
-    \label{bidvresult}
+    \label{bidvresult_1}
 \end{table}
 \begin{table}[H]
     \centering
-    \caption{BIDV Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu BIDV cho 5 thuật toán sau}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{BIDV Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu BIDV}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline         
          \multirow{2}{*}{VARMA} & 7:3 & 13533.87&12240.34&28.18\\ & 8:2 & 9806.60&7267.22&15.19 \\ & \textbf{9:1} & \textbf{13211.38} & \textbf{12005.67} & \textbf{24.31}\\       
          \hline
-         \multirow{2}{*}{Kalman Filter} & 7:3 & 347.07&183.11& 0.46\\ & 8:2 & 808.84&224.45&0.57 \\ & \textbf{9:1} & \textbf{1023.80} & \textbf{304.91} & \textbf{0.78}\\
+         \multirow{2}{*}{\makecell{Kalman\\Filter}\Gape[4pt]} & 7:3 & 347.07&183.11& 0.46\\ & 8:2 & 808.84&224.45&0.57 \\ & \textbf{9:1} & \textbf{1023.80} & \textbf{304.91} & \textbf{0.78}\\
          \hline
-         \multirow{2}{*}{Meta Learning} & 7:3 & 6687.32&4953.23&11.22\\ & 8:2 & 8905.57&7149.11&115.72 \\ & \textbf{9:1} & \textbf{11619.81} & \textbf{10248.67} & \textbf{20.89}\\
+         \multirow{2}{*}{\makecell{Meta\\-Learning}\Gape[4pt]} & 7:3 & 6687.32&4953.23&11.22\\ & 8:2 & 8905.57&7149.11&115.72 \\ & \textbf{9:1} & \textbf{11619.81} & \textbf{10248.67} & \textbf{20.89}\\
          \hline
          \multirow{2}{*}{NBeats} & 7:3 & 1568.92&1225.05&3.02\\ & 8:2 & 1333.41&993.17&2.29 \\ & \textbf{9:1} & \textbf{1452.04} & \textbf{1122.96} & \textbf{2.31}\\
          \hline
          \multirow{2}{*}{N-HiTS} & 7:3 & 761.21&528.28&1.28\\ & 8:2 & 731.64&506.20&1.15 \\ & \textbf{9:1} & \textbf{822} & \textbf{575.08} & \textbf{1.19}\\
          \hline
     \end{tabular}
-    \label{bidvresult}
+    \label{bidvresult_2}
 \end{table}
 
 % VCB table
-\subsubsection{Evaluation models with VCB dataset}
+\subsubsection{Đánh giá mô hình trên bộ dữ liệu Vietcombank (VCB)}
 \begin{table}[H]
     \centering
-    \caption{VCB Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu VCB cho 5 thuật toán đầu}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{VCB Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu VCB}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline
-         \multirow{2}{*}{LinearRegression} & 7:3 & 9193.28&8187.25&9.7 \\ & 8:2 & 10964.97&10382.15&11.63 \\ & \textbf{9:1} & \textbf{7267.68} & \textbf{6470.07} & \textbf{7.03}\\
+         \multirow{2}{*}{\makecell{Linear\\Regression}\Gape[4pt]} & 7:3 & 9193.28&8187.25&9.7 \\ & 8:2 & 10964.97&10382.15&11.63 \\ & \textbf{9:1} & \textbf{7267.68} & \textbf{6470.07} & \textbf{7.03}\\
          \hline
          \multirow{2}{*}{ARIMA} & 7:3 & 26725.46&25101.68&29.39\\ & 8:2 & 13823.10&13075.91&14.63 \\ & \textbf{9:1} & \textbf{5841.48} & \textbf{5018.32} & \textbf{5.46}\\
          \hline
@@ -639,45 +639,45 @@
          \multirow{2}{*}{GRU} & 7:3 & 17528.59&17192.13&20.56\\ & 8:2 & 17643.62&17581.13&19.94 \\ & \textbf{9:1} & \textbf{17085.98} & \textbf{17035.85} & \textbf{18.89}\\
          \hline
     \end{tabular}
-    \label{vcbresult}
+    \label{vcbresult_1}
 \end{table}
 
 
 \begin{table}[H]
     \centering
-    \caption{VCB Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu VCB cho 5 thuật toán sau}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{VCB Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu VCB}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline        
          \multirow{2}{*}{VARMA} & 7:3 & 27394.80&25693.65&30.07\\ & 8:2 & 19404.06&18300.77&20.48 \\ & \textbf{9:1} & \textbf{10751.45} & \textbf{9174.86} & \textbf{9.94}\\       
          \hline
-         \multirow{2}{*}{Kalman Filter} & 7:3 & 719.21&317.71&0.42\\ & 8:2 & 1639.78&396.68&0.53 \\ & \textbf{9:1} & \textbf{3006.35} & \textbf{602.69} & \textbf{0.85}\\
+         \multirow{2}{*}{\makecell{Kalman\\Filter}\Gape[4pt]} & 7:3 & 719.21&317.71&0.42\\ & 8:2 & 1639.78&396.68&0.53 \\ & \textbf{9:1} & \textbf{3006.35} & \textbf{602.69} & \textbf{0.85}\\
          \hline
-         \multirow{2}{*}{Meta Learning} & 7:3 & 17732.50&15385.31&17.92\\ & 8:2 & 24116.94&22014.26&24.83 \\ & \textbf{9:1} & \textbf{24780.37} & \textbf{22537.83} & \textbf{24.92}\\
+         \multirow{2}{*}{\makecell{Meta\\-Learning}\Gape[4pt]} & 7:3 & 17732.50&15385.31&17.92\\ & 8:2 & 24116.94&22014.26&24.83 \\ & \textbf{9:1} & \textbf{24780.37} & \textbf{22537.83} & \textbf{24.92}\\
          \hline
          \multirow{2}{*}{NBeats} & 7:3 & 2489.45&1960.15&2.45\\ & 8:2 & 1903.88&1444.53&1.64 \\ & \textbf{9:1} & \textbf{1565.97} & \textbf{1121.88} & \textbf{1.24}\\
          \hline
          \multirow{2}{*}{N-HiTS} & 7:3 & 1139.77&795.18&0.97\\ & 8:2 & 1107.53&805.27&0.91 \\ & \textbf{9:1} & \textbf{1032.32} & \textbf{714.59} & \textbf{0.79}\\
          \hline
     \end{tabular}
-    \label{vcbresult}
+    \label{vcbresult_2}
 \end{table}
 
 % EIB table
-\subsubsection{Evaluation models with EIB dataset}
+\subsubsection{Đánh giá mô hình trên bộ dữ liệu Eximbank (EIB)}
 \begin{table}[H]
     \centering
-    \caption{EIB Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu EIB cho 5 thuật toán đầu}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{EIB Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu EIB}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline
-         \multirow{2}{*}{LinearRegression} & 7:3 & 8518.18&8267.90&46.95 \\ & 8:2 & 5503.29&5322.43&29.54 \\ & \textbf{9:1} & \textbf{3966.94} & \textbf{3875.98} & \textbf{21.20}\\
+         \multirow{2}{*}{\makecell{Linear\\Regression}\Gape[4pt]} & 7:3 & 8518.18&8267.90&46.95 \\ & 8:2 & 5503.29&5322.43&29.54 \\ & \textbf{9:1} & \textbf{3966.94} & \textbf{3875.98} & \textbf{21.20}\\
          \hline
          \multirow{2}{*}{ARIMA} & 7:3 & 8173.63&7950.99&45.61\\ & 8:2 & 2768.02&2480.93&13.16 \\ & \textbf{9:1} & \textbf{997.83} & \textbf{823.84} & \textbf{4.38}\\
          \hline
@@ -688,29 +688,29 @@
          \multirow{2}{*}{GRU} & 7:3 & 2625.95&2526.05&13.71\\ & 8:2 & 2183.42&2150.93&11.65 \\ & \textbf{9:1} & \textbf{1978.61} & \textbf{1969.27} & \textbf{10.65}\\
          \hline         
     \end{tabular}
-    \label{eibresult}
+    \label{eibresult_1}
 \end{table}
 \begin{table}[H]
     \centering
-    \caption{EIB Dataset's Evaluation}
+    \caption{Đánh giá trên bộ dữ liệu EIB cho 5 thuật toán sau}
     \begin{tabular}{|c|c|c|c|c|}
          \hline
-         \multicolumn{5}{|c|}{\textbf{EIB Dataset's Evaluation}}\\
+         \rowcolor{cyan}\multicolumn{5}{|c|}{\textbf{Đánh giá trên bộ dữ liệu EIB}}\\
          \hline
          \centering Model & Training:Testing & RMSE & MAE & MAPE (\%)\\
          \hline         
          \multirow{2}{*}{VARMA} & 7:3 & 6311.07&5876.39&34.13\\ & 8:2 & 3202.22&2928.74&15.61\\ & \textbf{9:1} & \textbf{13211.38} & \textbf{12005.67} & \textbf{24.32}\\       
          \hline
-         \multirow{2}{*}{Kalman Filter} & 7:3 & 593.36&179.24&0.98\\ & 8:2 & 230.39&117.18&0.66 \\ & \textbf{9:1} & \textbf{415.36} & \textbf{135.54} & \textbf{0.79}\\
+         \multirow{2}{*}{\makecell{Kalman\\Filter}\Gape[4pt]} & 7:3 & 593.36&179.24&0.98\\ & 8:2 & 230.39&117.18&0.66 \\ & \textbf{9:1} & \textbf{415.36} & \textbf{135.54} & \textbf{0.79}\\
          \hline
-         \multirow{2}{*}{Meta Learning} & 7:3 & 4699.01&3753.18&21.28\\ & 8:2 & 2554.86&2115.52&11.81 \\ & \textbf{9:1} & \textbf{2573.81} & \textbf{2034.43} & \textbf{11.12}\\
+         \multirow{2}{*}{\makecell{Meta\\Learning}\Gape[4pt]} & 7:3 & 4699.01&3753.18&21.28\\ & 8:2 & 2554.86&2115.52&11.81 \\ & \textbf{9:1} & \textbf{2573.81} & \textbf{2034.43} & \textbf{11.12}\\
          \hline
          \multirow{2}{*}{NBeats} & 7:3 & 1923.79&1151.80&6.84\\ & 8:2 & 556.92&414.03&2.22 \\ & \textbf{9:1} & \textbf{467.71} & \textbf{353.59} & \textbf{1.91}\\
          \hline
          \multirow{2}{*}{N-HiTS} & 7:3 & 461.21&318.75&1.81\\ & 8:2 & 372.65&255.28&1.38 \\ & \textbf{9:1} & \textbf{294.03} & \textbf{205.03} & \textbf{1.11}\\
          \hline
     \end{tabular}
-    \label{eibresult}
+    \label{eibresult_2}
 \end{table}
 
 \vspace{10em}
