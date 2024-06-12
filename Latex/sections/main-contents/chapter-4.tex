@@ -86,15 +86,11 @@ x & \text{for } x\ge0
 Lặp lại quá trình trên cho đến khi hàm mất mát giảm đủ ( không thay đổi trong một số bước lặp nhất định, không thể giảm được nữa)
 % =========================================
 \subsection{LSTM}
-Mạng bộ nhớ dài-ngắn (Long Short Term Memory networks - LSTM), là một dạng đặc biệt của RNN, nó có khả năng học được các phụ thuộc xa. LSTM được giới thiệu bởi Hochreiter \& Schmidhuber (1997), và sau đó đã được cải tiến và phổ biến bởi rất nhiều người trong ngành. Chúng hoạt động cực kì hiệu quả trên nhiều bài toán khác nhau nên dần đã trở nên phổ biến như hiện nay.
-\par
-LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài.
-\par
-Đây là một loại đặc biệt của Mạng Nơ-ron Tái Phát, có khả năng xử lý vấn đề vanishing gradient gặp phải bởi RNN.
-    \indent\textbullet\ Output: \(c\), \(htct\), \(ht\). Ở đây, \(c\) biểu diễn trạng thái của ô (cell state) và \(h\) biểu diễn trạng thái ẩn (hidden state).
+Long Short Term Memory networks (LSTM) là một dạng đặc biệt của RNN có khả năng học được các phụ thuộc xa. Nó hoạt động cực kì hiệu quả trên nhiều bài toán khác nhau. LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài. Đây là một loại đặc biệt của Mạng Nơ-ron Tái Phát, có khả năng xử lý vấn đề vanishing gradient gặp phải bởi RNN.\\
+    \indent\textbullet\ Output: \(c\), \(htct\), \(ht\). Ở đây, \(c\) biểu diễn trạng thái của ô (cell state) và \(h\) biểu diễn trạng thái ẩn (hidden state).\\
     \indent\textbullet\ Input: \(ct\)-1, \(ht\)-1\(ht\)-1, \(ht\)-1. Trong đó, \(xtxt\) là đầu vào tại trạng thái thứ \(t\) của mô hình. \(ct\)-1, \(ht\)-1\(ht\)-1, \(ht\)-1 là đầu ra từ lớp trước. \(h\) chơi vai trò tương tự như \(s\) trong RNN, trong khi \(c\) là điểm mới của LSTM.
 
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.35\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{resources/chapter-4/lstm-1.png}
 \end{minipage}
@@ -116,16 +112,13 @@ Nhận xét: \( 0 < f_t, i_t, o_t < 1 \); \( b_f, b_i, b_o \) là các hệ số
 
 
 \subsection{GRU}
-GRU, hoặc Gated Recurrent Unit, là một loại mạng nơ-ron hồi tiếp (RNN) được giới thiệu bởi Cho và đồng nghiệp vào năm 2014 như một phương án đơn giản hơn so với mạng LSTM (Long Short-Term Memory). Tương tự như LSTM, GRU có thể xử lý dữ liệu tuần tự như văn bản, âm thanh và dữ liệu chuỗi thời gian.
-Ý tưởng cơ bản của GRU là sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn của mạng tại mỗi bước thời gian. Các cơ chế cổng được sử dụng để kiểm soát luồng thông tin vào và ra khỏi mạng. GRU có hai cơ chế cổng, gọi là cổng thiết lập lại (reset gate) và cổng cập nhật (update gate).
+Gated Recurrent Unit (GRU) là một loại mạng nơ-ron hồi tiếp (RNN) đơn giản hơn so với mạng LSTM. GRU sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn của mạng tại mỗi bước thời gian. Các cơ chế cổng được sử dụng để kiểm soát luồng thông tin vào và ra khỏi mạng. GRU có hai cơ chế cổng, gọi là cổng thiết lập lại (reset gate) và cổng cập nhật (update gate).
 \par
 Cổng thiết lập lại xác định mức độ của trạng thái ẩn trước đó nên được quên, trong khi cổng cập nhật xác định mức độ của đầu vào mới nên được sử dụng để cập nhật trạng thái ẩn. Đầu ra của GRU được tính toán dựa trên trạng thái ẩn đã được cập nhật.LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài.
 \par
-Tóm lại, mạng GRU là một loại RNN sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn tại mỗi bước thời gian, cho phép chúng hiệu quả mô hình dữ liệu tuần tự. Chúng đã được chứng minh là hiệu quả trong nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên, như mô hình ngôn ngữ, dịch máy và nhận dạng giọng nói.
-\par
 Phương trình được sử dụng để tính toán cổng thiết lập lại (\(r_t\)), cổng cập nhật (\(z_t\)), và trạng thái ẩn (\(h_t\)) của một Đơn vị Hồi tiếp Có Cổng (GRU) tại bước thời gian \(t\):
 
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.45\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{resources/chapter-4/gru-1.png}
 \end{minipage}
@@ -143,13 +136,13 @@ Trong đó:\\
 \subsection{VARMA}
 Vector Autoregressive Moving Average (VARMA) là mô hình thống kê dùng để mô hình hóa và dự đoán chuỗi dữ liệu có nhiều biến . VARMA là sự kết hợp giữa hai mô hình: Vector tự hồi quy (VAR) là mô hình dùng để kiểm tra các mối quan hệ giữa các biến tương tác với nhau. Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ. 
 \par
-Khi kết hợp hai mô hình lại thì mô hình VARMA được định nghĩa như sau:
+Kết hợp hai mô hình được mô hình VARMA sau:
 \[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + CD_{t} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - p} + \ \varepsilon_{t}\]
 Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là vector của các biến chuỗi thời gian tại thời điểm t\\
     \indent\textbullet\ \(c\) là vector độ lệch không đổi trong mỗi phương trình\\
     \indent\textbullet\ \(\phi_{1},\ \ldots\ ,\ \phi_{p}\) là ma trận tham số của AR với i = 1, …, p\\
-    \indent\textbullet\ \(C\) là ma trận hệ số của các biến hồi quy có khả năng xác định\\
+    \indent\textbullet\ \(C\) là ma trận hệ số các biến hồi quy có khả năng xác định\\
     \indent\textbullet\ \(D_{t}\) là vector chứa các biến hồi quy xác định thích hợp như biến không đổi, xu hướng hoặc mùa vụ\\
     \indent\textbullet\ \(\theta_{1},\ \ldots\ ,\ \theta_{p}\) là ma trận tham số của MA với j = 1, … , q\\
     \indent\textbullet\ \(\varepsilon_{t}\) là vector lỗi ngẫu nhiêu tại thời điểm t\\
@@ -157,12 +150,11 @@ Trong đó:\\
 % =========================================
 % =========================================
 \subsection{Kalman Filter}
-\subsubsection{Định nghĩa}
-Kalman Filter là một thuật toán tổng quát được sử dụng để ước lượng các tham số hệ thống. Nó có thể sử dụng các đo lường không chính xác hoặc nhiễu để ước lượng trạng thái của biến đó hoặc một biến không quan sát được khác với độ chính xác cao hơn.
+Kalman Filter là thuật toán tổng quát sử dụng để ước lượng các tham số hệ thống. Nó có thể sử dụng các đo lường không chính xác hoặc nhiễu để ước lượng trạng thái của biến đó hoặc một biến không quan sát được khác với độ chính xác cao hơn.
 \par
 Sức mạnh thực sự của Kalman Filter không phải là làm mịn các đo lường. Mà đó là khả năng ước lượng các tham số hệ thống mà không thể được đo lường hoặc quan sát với độ chính xác. Các ước lượng có độ chính xác cải thiện trong các hệ thống hoạt động thời gian thực, cho phép hệ thống kiểm soát mạnh mẽ hơn và do đó có nhiều khả năng hơn.
 
-\subsubsection{Công thức}
+\textbf{Công thức}
 
 \begin{minipage}{0.45\textwidth}
 \centering
@@ -177,52 +169,45 @@ Trong đó:\\
     \indent\textbullet\ \(Z_k\) là giá trị đo được (tại thời điểm k)\\
     \indent\textbullet\ \(X_k\) là giá trị dự đoán (tại thời điểm k)
 
-\subsubsection{Cách thuật toán hoạt động}
+\textbf{Cách thuật toán hoạt động}\\
     \indent\textbullet\ Bước 1: Khởi tạo giá trị ban đầu của X và P bằng với giá trị đầu tiên của bộ dữ liệu\\
     \indent\textbullet\ Bước 2: Sau đó sẽ tiến hành dự đoán \(X_{k^-}\) và \(P_{k^-}\) (Giá trị trước khi đo đạc)\\
     \indent\textbullet\ Bước 3: Tính toán lại Kalman Gain\\
     \indent\textbullet\ Bước 4: Sau khi đo lường được giá trị \(Z_k\) thì sẽ tính toán lại \(X_k\)(Giá trị dự đoán)\\
     \indent\textbullet\ Bước 5: Sau đó sẽ tính toán lại P và lặp lại từ bước 2\\
 
-\begin{minipage}{0.45\textwidth}
-\centering
-\includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-2.png}
-\end{minipage}
-\\ \\
+% \begin{minipage}{0.45\textwidth}
+% \centering
+% \includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-2.png}
+% \end{minipage}
 
 % =========================================
 \subsection{Meta-learning}
-Meta-learning là một phương pháp trong học máy nhằm huấn luyện các mô hình để học một cách hiệu quả các nhiệm vụ mới với lượng dữ liệu hạn chế. Một trong những thuật toán nổi tiếng nhất trong meta-learning là Model-Agnostic Meta-Learning (MAML).
+Meta-learning là một phương pháp trong học máy nhằm huấn luyện các mô hình để học một cách hiệu quả các nhiệm vụ mới với lượng dữ liệu hạn chế. Một trong những thuật toán nổi tiếng nhất là Model-Agnostic Meta-Learning (MAML).
 \par
-\textbf{Model-Agnostic Meta-Learning (MAML)}
-\par
-Mục tiêu: MAML nhằm tìm một khởi tạo tốt cho các tham số của mô hình, giúp mô hình có thể được tinh chỉnh nhanh chóng trên một nhiệm vụ mới chỉ với một vài bước cập nhật gradient.
+Mục tiêu: MAML tìm một khởi tạo tốt cho các tham số của mô hình, giúp mô hình có thể được tinh chỉnh nhanh chóng trên một nhiệm vụ mới chỉ với một vài bước cập nhật gradient.
 \par
 \textbf{Khái niệm chính}
 \par
     \indent\textbullet\ 1.	Phân phối nhiệm vụ (p(T)p(T)): Một phân phối trên các nhiệm vụ mà mô hình cần thích nghi.\\
-    \indent\textbullet\ 2.	Mô hình cơ bản (\(f_\theta f_\theta\)): Mô hình được tham số hóa bởi \(\theta \theta\).\\
+    \indent\textbullet\ 2.	Mô hình cơ bản (\(f_\theta f_\theta\)): được tham số hóa bởi \(\theta \theta\).\\
     \indent\textbullet\ 3.	Bộ dữ liệu hỗ trợ (Support Set): Bộ dữ liệu nhỏ từ đó mô hình học nhiệm vụ.\\
     \indent\textbullet\ 4.	Bộ dữ liệu truy vấn (Query Set): Bộ dữ liệu được dùng để đánh giá mô hình sau khi nó đã thích nghi với nhiệm vụ.\\
 \par
 \textbf{Các bước của thuật toán MAML}
 \par
-    \indent\textbullet\ 1.	Khởi tạo tham số mô hình: Bắt đầu với các tham số khởi tạo \(\theta \theta\).\\
+    \indent\textbullet\ 1.	Khởi tạo tham số mô hình với các tham số khởi tạo \(\theta \theta\).\\
     \indent\textbullet\ 2.	Lấy mẫu một loạt các nhiệm vụ: Lấy mẫu một loạt các nhiệm vụ {Ti}{Ti} từ phân phối nhiệm vụ p(T)p(T)\\
     \indent\textbullet\ 3. Đối với mỗi nhiệm vụ \(T_i\)\\
-    	Lấy mẫu bộ dữ liệu hỗ trợ \(D_{T_i}^{\mathrm{train\ }}\) và bộ dữ liệu truy vấn \(D_{T_i}^{\mathrm{test\ }}\).\\ \\
-     	Tính gradient của hàm mất mát trên bộ dữ liệu hỗ trợ với tham số \(\theta\):\\
-            \[\nabla_\theta\mathcal{L}_{T_i}\left(f_\theta\right)\] \\
-            Cập nhật các tham số sử dụng gradient:\\
-            \[\theta_i^\prime=\theta-\alpha\nabla_\theta\mathcal{L}_{T_i}\left(f_\theta\right)\] \\
-        \indent\textbullet\ 4. Cập nhật Meta\\
-            Tính hàm mất mát trên bộ dữ liệu truy vấn sử dụng tham số đã cập nhật \(\theta_i^\prime\) \\ 
-            \[\mathcal{L}_{T_i}\left(f_{\theta_i^\prime}\right)\]\\
-            Tính gradient của hàm mất mát trên bộ dữ liệu truy vấn đối với các tham số khởi tạo \(\theta\) \\
-            \[\nabla_\theta\mathcal{L}_{T_i}\left(f_{\theta_i^\prime}\right)\] \\
-            Cập nhật các tham số khởi tạo \(\theta\) bằng cách trung bình các gradient qua loạt nhiệm vụ: \\
-            \[\theta \gets \theta - \beta \sum_{i} \, \nabla_{\theta} \mathcal{L}_{T_{i}} \left( f_{\theta_{i}^{\prime}} \right)\]
-            , với \(\beta\) là tốc độ học của meta.
+    	Lấy mẫu bộ dữ liệu hỗ trợ \(D_{T_i}^{\mathrm{train\ }}\) và bộ dữ liệu truy vấn \(D_{T_i}^{\mathrm{test\ }}\).\\
+     	Tính gradient hàm mất mát trên dữ liệu hỗ trợ với tham số \(\theta\): \(\nabla_\theta\mathcal{L}_{T_i}\left(f_\theta\right)\) \\
+            Cập nhật các tham số sử dụng gradient: \(\theta_i^\prime=\theta-\alpha\nabla_\theta\mathcal{L}_{T_i}\left(f_\theta\right)\) \\
+    \indent\textbullet\ 4. Cập nhật Meta\\
+        Tính hàm mất mát trên bộ dữ liệu truy vấn sử dụng tham số đã cập nhật \(\theta_i^\prime\): \(\mathcal{L}_{T_i}\left(f_{\theta_i^\prime}\right)\)\\
+        Tính gradient của hàm mất mát trên bộ dữ liệu truy vấn đối với các tham số khởi tạo \(\theta\): \(\nabla_\theta\mathcal{L}_{T_i}\left(f_{\theta_i^\prime}\right)\) \\
+        Cập nhật các tham số khởi tạo \(\theta\) bằng cách trung bình các gradient qua loạt nhiệm vụ: \\
+        \[\theta \gets \theta - \beta \sum_{i} \, \nabla_{\theta} \mathcal{L}_{T_{i}} \left( f_{\theta_{i}^{\prime}} \right)\]
+        , với \(\beta\) là tốc độ học của meta.
 
 % =========================================
 \subsection{NBeats}
@@ -260,7 +245,7 @@ N-HiTS là một phương pháp dự báo chuỗi thời gian, mở rộng từ 
 Giống như N-BEATS, N-HiTS thực hiện các phép chiếu phi tuyến cục bộ lên các hàm cơ sở qua nhiều khối, mỗi khối bao gồm một multilayer perceptron (MLP) học cách tạo ra các hệ số cho đầu ra backcast và forecast. Các khối được nhóm thành các stack, mỗi stack học một đặc điểm khác nhau của dữ liệu. Đầu vào của toàn bộ mạng là chuỗi tín hiệu \(y_{t-L:t}\) từ \(L\) độ trễ.
 
 \textbf{Lấy mẫu tín hiệu đa tỷ lệ:}
-Tại đầu vào của mỗi khối \(\ell\), một lớp MaxPool với kích thước kernel \(k_{\ell}\) được sử dụng để phân tích các thành phần tín hiệu ở một tỷ lệ cụ thể. Kích thước \(k_{\ell}\) lớn hơn cắt bớt các thành phần tần số cao, giúp khối tập trung vào phân tích các nội dung quy mô lớn. Điều này giúp giảm số lượng tham số cần học, giảm thiểu overfitting và duy trì trường tiếp nhận ban đầu.
+Tại đầu vào của mỗi khối \(\ell\), một lớp MaxPool với kích thước kernel \(k_{\ell}\) được sử dụng để phân tích các thành phần tín hiệu ở một tỷ lệ cụ thể. Kích thước \(k_{\ell}\) lớn hơn cắt bớt các thành phần tần số cao, giúp khối tập trung vào phân tích các nội dung quy mô lớn.
 \[\mathbf{y}^{(p)}_{t-L:t, \ell} = \mathbf{MaxPool}\left(\mathbf{y}_{t-L:t, \ell},\; k_{\ell}\right)\]
 
 \textbf{Hồi quy phi tuyến:}

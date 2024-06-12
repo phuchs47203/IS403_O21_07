@@ -57,14 +57,14 @@
 \def\historyfont{\sffamily\fontencoding{T5}\fontseries{n}\fontshape{n}\fontsize{7}{8.4}\selectfont}%formata reg 7pt
 \def\doifont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{6}{7.2}\selectfont}%giovannistd-bookitalic 6pt
 \def\titlefont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{20}{25}\selectfont}%formata condmed 22pt
-\def\authorfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.9}{12}\selectfont}%formata medium 9.9pt
-\def\membershipfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.9}{12}\selectfont}%formata medium italic 9.9pt
+\def\authorfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.75}{12}\selectfont}%formata medium 9.9pt
+\def\membershipfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9.75}{12}\selectfont}%formata medium italic 9.9pt
 \def\addressfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{6.6}{8}\selectfont}%times roman 6.6pt
 \def\correspfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{7.7}{9.24}\selectfont}%times roman 7.7pt
 \def\tfootnotefont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{7.7}{9.24}\selectfont}%times roman 7.7pt
-\def\abstractfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{10}{12}\selectfont}%times roman 10pt
-\def\indexfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{10}{12}\selectfont}%times roman 10pt
-\def\bodyfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{10}{12}\selectfont}%times roman 10pt
+\def\abstractfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{9.5}{11.75}\selectfont}%times roman 10pt
+\def\indexfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{9.5}{11.75}\selectfont}%times roman 10pt
+\def\bodyfont{\rmfamily\fontencoding{T5}\fontseries{n}\fontsize{9.5}{11.75}\selectfont}%times roman 10pt
 \def\abstractheadfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{10}{12}\selectfont}%formata bold 9pt
 \def\indexheadfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{10}{12}\selectfont}%formata bold 9pt
 \def\sectionAfont{\sffamily\fontencoding{T5}\fontseries{b}\fontsize{9}{12}\selectfont}%formata bold 9pt
