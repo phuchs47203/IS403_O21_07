@@ -256,4 +256,35 @@ Mô tả cấu trúc mô hình: \\
 
 % =========================================
 \subsection{N-HiTS}
-Nội dung.
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{resources/chapter-4/nhits-1.png}
+\end{minipage}
+
+N-HiTS là một phương pháp dự báo chuỗi thời gian, mở rộng từ phương pháp Neural Basis Expansion Analysis (N-BEATS). N-HiTS cải thiện độ chính xác và hiệu quả tính toán, đặc biệt trong dự báo dài hạn, thông qua việc sử dụng lấy mẫu đa tỷ lệ và tổng hợp đa tỷ lệ.
+
+\textbf{Nguyên lý hoạt động:}
+Giống như N-BEATS, N-HiTS thực hiện các phép chiếu phi tuyến cục bộ lên các hàm cơ sở qua nhiều khối, mỗi khối bao gồm một multilayer perceptron (MLP) học cách tạo ra các hệ số cho đầu ra backcast và forecast. Các khối được nhóm thành các stack, mỗi stack học một đặc điểm khác nhau của dữ liệu. Đầu vào của toàn bộ mạng là chuỗi tín hiệu \(y_{t-L:t}\) từ \(L\) độ trễ.
+
+\textbf{Lấy mẫu tín hiệu đa tỷ lệ:}
+Tại đầu vào của mỗi khối \(\ell\), một lớp MaxPool với kích thước kernel \(k_{\ell}\) được sử dụng để phân tích các thành phần tín hiệu ở một tỷ lệ cụ thể. Kích thước \(k_{\ell}\) lớn hơn cắt bớt các thành phần tần số cao, giúp khối tập trung vào phân tích các nội dung quy mô lớn. Điều này giúp giảm số lượng tham số cần học, giảm thiểu overfitting và duy trì trường tiếp nhận ban đầu.
+\[\mathbf{y}^{(p)}_{t-L:t, \ell} = \mathbf{MaxPool}\left(\mathbf{y}_{t-L:t, \ell},\; k_{\ell}\right)\]
+
+\textbf{Hồi quy phi tuyến:}
+Sau khi lấy mẫu, khối thực hiện hồi quy phi tuyến để tạo ra các hệ số MLP tiến và lùi. Các hệ số này được sử dụng để tổng hợp đầu ra backcast và forecast của khối. Quá trình này giúp tạo ra dự báo chính xác hơn bằng cách sử dụng các phép chiếu phi tuyến.
+\begin{align*}
+\begin{split}
+    {h}_{\ell} = \mathbf{MLP}_{\ell}\left(\mathbf{y}^{(p)}_{t-L:t,\ell}\right)\\
+    \theta^{f}_{\ell} = \textbf{LINEAR}^{f}\left(\mathbf{h}_{\ell}\right)\\
+    \theta^{b}_{\ell} = \textbf{LINEAR}^{b}\left(\mathbf{h}_{\ell}\right)
+\end{split}
+\end{align*}
+
+\textbf{Nội suy phân cấp (Hierarchical Interpolation):}
+Để giải quyết vấn đề tăng nhanh yêu cầu tính toán khi chân trời dự báo tăng, N-HiTS sử dụng nội suy thời gian. Các hệ số nội suy được xác định theo tỷ lệ biểu đạt (expressiveness ratio) \(r_{\ell}\) điều chỉnh số lượng tham số trên mỗi đơn vị thời gian đầu ra, $|\theta^{f}_{\ell}|= \lceil r_{\ell} \, H \rceil$. Để khôi phục lại tốc độ lấy mẫu ban đầu và dự báo tất cả $H$ điểm trong tầm nhìn, chúng ta sử dụng nội suy thời gian thông qua hàm nội suy $g$:
+\begin{align*}
+\begin{split}
+    \hat{y}_{\tau,\ell}   = g(\tau, \theta^{f}_{\ell}), \quad \forall \tau \in \{t+1,\dots,t+H\}, \\
+    \tilde{y}_{\tau,\ell} = g(\tau, \theta^{b}_{\ell}), \quad \forall \tau \in \{t-L,\dots,t\}. 
+\end{split}
+\end{align*}
