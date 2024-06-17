@@ -1,15 +1,15 @@
 \section{Tài nguyên}
 \subsection{Nguồn dữ liệu}
 % hoang
-Tập dữ liệu được sử dụng trong nghiên cứu này được lấy từ \underline{\href{https://finance.yahoo.com/}{https://finance.yahoo.com/}}, một nền tảng tài chính uy tín được biết đến với thông tin thị trường toàn diện và cập nhật. Tập dữ liệu bao gồm dữ liệu giá cổ phiếu của ba ngân hàng nổi tiếng tại Việt Nam: Ngân hàng Đầu tư và Phát triển Việt Nam (BIDV), Ngân hàng Thương mại Cổ phần Xuất Nhập Khẩu Việt Nam (Eximbank) và Ngân hàng Thương mại Cổ phần Ngoại Thương Việt Nam (Vietcombank). Bằng cách tận dụng dữ liệu có sẵn trên nền tảng này, chúng tôi đảm bảo một nền tảng đáng tin cậy cho phân tích của mình. Tập dữ liệu bắt đầu từ ngày 1 tháng 3 năm 2019 đến ngày 1 tháng 3 năm 2024, cung cấp một phạm vi thời gian mạnh mẽ cho phân tích của chúng tôi. Mỗi mục trong tập dữ liệu bao gồm các chỉ số tài chính chính, bao gồm:
+Tập dữ liệu được sử dụng trong nghiên cứu này được lấy từ \underline{\href{https://finance.yahoo.com/}{https://finance.yahoo.com/}}, một trang tin tức thị trường chứng khoán thế giới đáng tin cậy. Tập dữ liệu bao gồm dữ liệu giá cổ phiếu của ba ngân hàng tại Việt Nam: BIDV, Eximbank và Vietcombank. Tập dữ liệu được lấy trong khoảng thời gian 01-03-2019 đến 01-06-2024. Mỗi mục trong tập dữ liệu bao gồm các chỉ số tài chính chính, bao gồm:
 \begin{itemize}
 \item \textbf{Date}: Ngày giao dịch.
 \item \textbf{Open}: Giá cổ phiếu mở cửa vào đầu ngày giao dịch.
-\item \textbf{High}: Giá cổ phiếu cao nhất ghi nhận được trong ngày giao dịch.
-\item \textbf{Low}: Giá cổ phiếu thấp nhất ghi nhận được trong ngày giao dịch.
+\item \textbf{High}: Giá cổ phiếu cao nhất ghi nhận được trong ngày.
+\item \textbf{Low}: Giá cổ phiếu thấp nhất ghi nhận được trong ngày.
 \item \textbf{Close}: Giá cổ phiếu đóng cửa vào một ngày nhất định.
-\item \textbf{Adj Close}: Giá đóng cửa được điều chỉnh, bao gồm bất kỳ hành động doanh nghiệp nào như cổ tức hoặc chia cổ phiếu.
-\item \textbf{Volume}: Khối lượng giao dịch, chỉ ra tổng số cổ phiếu được giao dịch vào một ngày cụ thể.
+\item \textbf{Adj Close}: Giá đóng cửa được điều chỉnh.
+\item \textbf{Volume}: Khối lượng/tổng số cổ phiếu được giao dịch.
 \end{itemize}
 \subsection{Thống kê mô tả}
 \begin{table}[H]
@@ -88,26 +88,26 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
 \end{figure}
 
 \subsection{Công cụ}
-Trong nghiên cứu của chúng tôi, chúng tôi đã sử dụng các công cụ phân tích thống kê khác nhau trong Python để hiểu rõ hơn dữ liệu và đưa ra những kết luận ý nghĩa. Các công cụ này, bao gồm numpy, pandas, sklearn và matplotlib.pyplot, đã giúp chúng tôi khám phá ra những phát hiện đáng chú ý. Để biết kết quả chi tiết, vui lòng xem bảng mô tả và biểu đồ được cung cấp.
+Trong nghiên cứu này, chúng em đã sử dụng các công cụ phân tích thống kê khác nhau trong Python bao gồm numpy, pandas, sklearn và matplotlib.pyplot.
 % end hoang
 
 \subsection{Tỷ lệ phân chia tập dữ liệu}
-Trong đồ án, phân chia dữ liệu thành hai tập: tập train và tập test theo các tỷ lệ 7:3, 8:2, 9:1. Tỷ lệ tiêu chuẩn là 7:3, tức là sử dụng 70\% dữ liệu cho việc train và 30\% cho việc test. Tỷ lệ này thường được sử dụng bởi vì với một bộ dữ liệu lớn và cần đạt được độ chính xác cao trong đánh giá mô hình, tỷ lệ 7:3 có thể tận dụng tối đa thông tin từ dữ liệu train và với một tập test chiếm 30\% trong tỷ lệ này, vẫn còn đủ dữ liệu để đánh giá hiệu quả của mô hình một cách đáng tin cậy. Bên cạnh đó, tỷ lệ 8:2 được coi là tỷ lệ tốt nhất cho việc phân chia tập train và tập test, trong đó sử dụng 80\% dữ liệu cho việc train và 20\% cho test. Tỷ lệ này thường được sử dụng khi bộ dữ liệu có kích thước lớn và tỷ lệ 8:2 sẽ giúp mô hình được train với nhiều thông tin hơn từ dữ liệu. Với một tập test chiếm 20\% quy mô, vẫn còn một lượng đáng kể dữ liệu để đánh giá hiệu quả của mô hình. Điều này giúp đảm bảo tính tin cậy và đại diện của kết quả đánh giá. Cuối cùng, tỷ lệ 9:1 có nghĩa là 90\% dữ liệu được sử dụng cho train, 10\% cho test. Tỷ lệ train gần với test sẽ giúp mô hình học được nhiều thông tin hơn từ tập huấn luyện và đánh giá hiệu quả tốt trên tập kiểm tra.
+Phân chia dữ liệu thành hai tập: tập train và tập test theo các tỷ lệ 7:3, 8:2, 9:1. Tỷ lệ tiêu chuẩn là 7:3, tức là sử dụng 70\% dữ liệu cho việc train và 30\% cho việc test. Tỷ lệ này thường được sử dụng bởi vì với một bộ dữ liệu lớn và cần đạt được độ chính xác cao trong đánh giá mô hình. Bên cạnh đó, tỷ lệ 8:2 được coi là tỷ lệ tốt nhất cho việc phân chia tập train và tập test. Tỷ lệ này thường được sử dụng khi bộ dữ liệu có kích thước lớn và sẽ giúp mô hình được train với nhiều thông tin hơn từ dữ liệu. Cuối cùng, tỷ lệ 9:1 có train gần với test sẽ giúp mô hình học được nhiều thông tin hơn từ tập huấn luyện và đánh giá hiệu quả tốt trên tập kiểm tra.
 
 \subsection{Các chỉ số đánh giá mô hình}
-Để đánh giá độ chính xác của các mô hình, chúng tôi sử dụng ba tham số là Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) và Root Mean Squared Error (RMSE). Thuật toán có giá trị thấp nhất trong ba thuật toán sẽ có độ chính xác tốt nhất. Dưới đây là công thức cho MAE, MAPE và RMSE.
+Để đánh giá độ chính xác của các mô hình, sử dụng ba tham số là Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) và Root Mean Squared Error (RMSE). Các giá trị này càng nhỏ thì mô hình càng tốt.
 \par
-\textbf{RMSE} (Root Mean Squared Error) là một thước đo hiệu suất hoặc độ chính xác của một mô hình dự báo, được tính bằng cách lấy căn bậc hai của trung bình bình phương sai số giữa các giá trị dự đoán và các giá trị thực tế.
+\textbf{RMSE} được tính bằng cách lấy căn bậc hai của trung bình bình phương sai số giữa các giá trị dự đoán và các giá trị thực tế.
 \[
 \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
 \]
 \par
-\textbf{MAPE}  (Mean Absolute Percent Error), còn được gọi là độ lệch phần trăm tuyệt đối trung bình (MAPD), là thước đo độ chính xác dự đoán của phương pháp dự báo trong thống kê. Nó thường biểu thị độ chính xác dưới dạng tỷ lệ được xác định bởi công thức:
+\textbf{MAPE} còn được gọi là độ lệch phần trăm tuyệt đối trung bình. Nó thường biểu thị độ chính xác dưới dạng tỷ lệ được xác định bởi công thức:
 \[
 \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100
 \]
 \par
-\textbf{MAE} (Mean Absolute Error) là một thước đo hiệu suất hoặc độ chính xác của một mô hình dự báo, được đo bằng cách tính trung bình giá trị tuyệt đối của sai số giữa giá trị thực tế và giá trị dự đoán.
+\textbf{MAE} được đo bằng cách tính trung bình giá trị tuyệt đối của sai số giữa giá trị thực tế và giá trị dự đoán.
 \[
 \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
 \]

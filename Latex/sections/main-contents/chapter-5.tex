@@ -166,7 +166,7 @@
     \end{minipage}
     \hfill
     
-    \caption{Kết quả chạy của mô hình VARMA}
+    \caption{Kết quả chạy của mô hình RNN}
     \label{fig:RNN}
 \end{figure}
 
@@ -223,7 +223,7 @@
     \end{minipage}
     \hfill
     
-    \caption{Kết quả chạy của mô hình Meta-Learning}
+    \caption{Kết quả chạy của mô hình LSTM}
     \label{fig:lstm_result}
 \end{figure}
 
@@ -567,8 +567,6 @@
     \label{fig:n-hits_result}
 \end{figure}
 
-\vspace{10em}
-
 \subsection{Đánh giá mô hình} 
 % BIDV table
 \subsubsection{Đánh giá mô hình trên bộ dữ liệu BIDV}
@@ -607,7 +605,7 @@
          \hline
          \multirow{2}{*}{\makecell{Kalman\\Filter}\Gape[4pt]} & 7:3 & 347.07&183.11& 0.46\\ & 8:2 & 808.84&224.45&0.57 \\ & \textbf{9:1} & \textbf{1023.80} & \textbf{304.91} & \textbf{0.78}\\
          \hline
-         \multirow{2}{*}{\makecell{Meta\\-Learning}\Gape[4pt]} & 7:3 & 6687.32&4953.23&11.22\\ & 8:2 & 8905.57&7149.11&115.72 \\ & \textbf{9:1} & \textbf{11619.81} & \textbf{10248.67} & \textbf{20.89}\\
+         \multirow{2}{*}{\makecell{Meta\\Learning}\Gape[4pt]} & 7:3 & 6687.32&4953.23&11.22\\ & 8:2 & 8905.57&7149.11&115.72 \\ & \textbf{9:1} & \textbf{11619.81} & \textbf{10248.67} & \textbf{20.89}\\
          \hline
          \multirow{2}{*}{NBeats} & 7:3 & 1568.92&1225.05&3.02\\ & 8:2 & 1333.41&993.17&2.29 \\ & \textbf{9:1} & \textbf{1452.04} & \textbf{1122.96} & \textbf{2.31}\\
          \hline
@@ -656,7 +654,7 @@
          \hline
          \multirow{2}{*}{\makecell{Kalman\\Filter}\Gape[4pt]} & 7:3 & 719.21&317.71&0.42\\ & 8:2 & 1639.78&396.68&0.53 \\ & \textbf{9:1} & \textbf{3006.35} & \textbf{602.69} & \textbf{0.85}\\
          \hline
-         \multirow{2}{*}{\makecell{Meta\\-Learning}\Gape[4pt]} & 7:3 & 17732.50&15385.31&17.92\\ & 8:2 & 24116.94&22014.26&24.83 \\ & \textbf{9:1} & \textbf{24780.37} & \textbf{22537.83} & \textbf{24.92}\\
+         \multirow{2}{*}{\makecell{Meta\\Learning}\Gape[4pt]} & 7:3 & 17732.50&15385.31&17.92\\ & 8:2 & 24116.94&22014.26&24.83 \\ & \textbf{9:1} & \textbf{24780.37} & \textbf{22537.83} & \textbf{24.92}\\
          \hline
          \multirow{2}{*}{NBeats} & 7:3 & 2489.45&1960.15&2.45\\ & 8:2 & 1903.88&1444.53&1.64 \\ & \textbf{9:1} & \textbf{1565.97} & \textbf{1121.88} & \textbf{1.24}\\
          \hline
@@ -713,9 +711,8 @@
     \label{eibresult_2}
 \end{table}
 
-\vspace{10em}
 
-\subsection{Dự đoán giá cho 90 ngày tới} 
+\subsection{Dự đoán giá cho 90 ngày tới của 3 mô hình tốt nhất} 
 % \subsubsection{Linear Regression}
 % \begin{figure}[H]
 %     \centering
