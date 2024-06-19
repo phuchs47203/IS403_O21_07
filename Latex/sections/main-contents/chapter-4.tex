@@ -107,7 +107,6 @@ Nhận xét: \( 0 < f_t, i_t, o_t < 1 \); \( b_f, b_i, b_o \) là các hệ số
 \par
 \( h_t = o_t \ast \tanh\left(c_t\right) \), output gate quyết định cần lấy bao nhiêu từ cell state để trở thành output của hidden state. Ngoài ra \( h_t \) cũng được dùng để tính output \( y_t \) cho state \( t \).
 
-
 \subsection{GRU}
 Ý tưởng cơ bản của GRU là sử dụng cơ chế cổng để lựa chọn cập nhật trạng thái ẩn của mạng tại mỗi bước thời gian. Các cơ chế cổng được sử dụng để kiểm soát luồng thông tin vào và ra khỏi mạng. GRU có hai cơ chế cổng, gọi là cổng thiết lập lại (reset gate) và cổng cập nhật (update gate).
 \par
@@ -143,11 +142,11 @@ Trong đó:\\
     \indent\textbullet\ \(\varepsilon_{t}\) là vector lỗi ngẫu nhiêu tại thời điểm t
 % =========================================
 \subsection{Kalman Filter}
-\subsubsection{Định nghĩa}
 Kalman Filter là một thuật toán tổng quát được sử dụng để ước lượng các tham số hệ thống. Nó có thể sử dụng các đo lường không chính xác hoặc nhiễu để ước lượng trạng thái của biến đó hoặc một biến không quan sát được khác với độ chính xác cao hơn.
-\\Sức mạnh thực sự của Kalman Filter không phải là làm mịn các đo lường. Mà đó là khả năng ước lượng các tham số hệ thống mà không thể được đo lường hoặc quan sát với độ chính xác
-\subsubsection{Công thức}
 
+Sức mạnh thực sự của Kalman Filter không phải là làm mịn các đo lường. Mà là khả năng ước lượng các tham số hệ thống mà không thể được đo lường hoặc quan sát với độ chính xác\\
+
+\textbf{Công thức}\\
 \begin{minipage}{0.45\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-1.png}
@@ -159,16 +158,17 @@ Trong đó:\\
     \indent\textbullet\ H là ma trận quan sát \\
     \indent\textbullet\ \(H^T\) là mà trận chuyển vị của H\\
     \indent\textbullet\ \(Z_k\) là giá trị đo được (tại thời điểm k)\\
-    \indent\textbullet\ \(X_k\) là giá trị dự đoán (tại thời điểm k)
+    \indent\textbullet\ \(X_k\) là giá trị dự đoán (tại thời điểm k)\\
+    
 
-\subsubsection{Cách thuật toán hoạt động}
+\textbf{Cách thuật toán hoạt động}\\
     \indent\textbullet\ Bước 1: Khởi tạo giá trị ban đầu của X và P bằng với giá trị đầu tiên của bộ dữ liệu\\
     \indent\textbullet\ Bước 2: Sau đó sẽ tiến hành dự đoán \(X_{k^-}\) và \(P_{k^-}\) (Giá trị trước khi đo đạc)\\
     \indent\textbullet\ Bước 3: Tính toán lại Kalman Gain\\
     \indent\textbullet\ Bước 4: Sau khi đo lường được giá trị \(Z_k\) thì sẽ tính toán lại \(X_k\)(Giá trị dự đoán)\\
     \indent\textbullet\ Bước 5: Sau đó sẽ tính toán lại P và lặp lại từ bước 2\\
 
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{0.4\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{resources/chapter-4/kalman-fillter-2.png}
 \end{minipage}
