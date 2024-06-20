@@ -1,4 +1,4 @@
-# Comparative Analysis of Statistical and Machine Learning Models for Enhanced Cryptocurrency Price Prediction with Technical Indicator Integration
+# Comparative Analysis of Statistical and Machine Learning Models for VietNam Bank Stock Price Prediction with Technical Indicator Integration
 
 ## Introduction
 This repository contains the code and resources for a class project on forecasting cryptocurrency prices using statistical models and machine learning algorithms. The project explores the performance of Linear Regression, ARIMA, Recurrent Neural Networks (RNN), Gated Recurrent Units (GRU), Long Short-Term Memory (LSTM) networks, VARMAR, Kalman Filter,Meta Learning, NBeats, NHiTS in forecasting the stock prices of Bank.
