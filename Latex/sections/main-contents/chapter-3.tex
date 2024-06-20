@@ -87,6 +87,13 @@ Tập dữ liệu được sử dụng trong nghiên cứu này được lấy t
     \end{minipage}
 \end{figure}
 
+\textbf{BIDV}: Giá cổ phiếu sẽ tập trung quanh mức 30000, còn có một số giá trị ngoại lệ. Để các giá trị ngoại lệ không ảnh hưởng đến việc học của mô hình thì có thể xem xét khử nhiễu cho các giá trị này bằng cách thay thế bằng giá trị mới hoặc loại bỏ nó.
+\par
+\textbf{Eximbank}: Biểu đồ lệch trái cho thấy giá phân bổ rất thấp, các giá trị cao thì dàn trải thưa thớt.
+\par
+\textbf{VCB}: Dữ liệu phân bổ ổn định nhất so với BIDV, Eximbank. Với dữ liệu này, mô hình sẽ học và cho ra kết quả tốt hơn.
+
+
 \subsection{Công cụ}
 Trong nghiên cứu này, chúng em đã sử dụng các công cụ phân tích thống kê khác nhau trong Python bao gồm numpy, pandas, sklearn và matplotlib.pyplot.
 % end hoang
