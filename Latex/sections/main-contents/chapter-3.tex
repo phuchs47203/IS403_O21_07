@@ -92,22 +92,22 @@ Trong nghiên cứu này, chúng em đã sử dụng các công cụ phân tích
 % end hoang
 
 \subsection{Tỷ lệ phân chia tập dữ liệu}
-Phân chia dữ liệu thành hai tập: tập train và tập test theo các tỷ lệ 7:3, 8:2, 9:1. Tỷ lệ tiêu chuẩn là 7:3, tức là sử dụng 70\% dữ liệu cho việc train và 30\% cho việc test. Tỷ lệ này thường được sử dụng bởi vì với một bộ dữ liệu lớn và cần đạt được độ chính xác cao trong đánh giá mô hình. Bên cạnh đó, tỷ lệ 8:2 được coi là tỷ lệ tốt nhất cho việc phân chia tập train và tập test. Tỷ lệ này thường được sử dụng khi bộ dữ liệu có kích thước lớn và sẽ giúp mô hình được train với nhiều thông tin hơn từ dữ liệu. Cuối cùng, tỷ lệ 9:1 có train gần với test sẽ giúp mô hình học được nhiều thông tin hơn từ tập huấn luyện và đánh giá hiệu quả tốt trên tập kiểm tra.
+Phân chia dữ liệu thành hai tập: tập train và tập test theo các tỷ lệ 7:3, 8:2, 9:1. %Tỷ lệ tiêu chuẩn là 7:3, tức là sử dụng 70\% dữ liệu cho việc train và 30\% cho việc test. Tỷ lệ này thường được sử dụng bởi vì với một bộ dữ liệu lớn và cần đạt được độ chính xác cao trong đánh giá mô hình. Bên cạnh đó, tỷ lệ 8:2 được coi là tỷ lệ tốt nhất cho việc phân chia tập train và tập test. Tỷ lệ này thường được sử dụng khi bộ dữ liệu có kích thước lớn và sẽ giúp mô hình được train với nhiều thông tin hơn từ dữ liệu. Cuối cùng, tỷ lệ 9:1 có train gần với test sẽ giúp mô hình học được nhiều thông tin hơn từ tập huấn luyện và đánh giá hiệu quả tốt trên tập kiểm tra.
 
 \subsection{Các chỉ số đánh giá mô hình}
 Để đánh giá độ chính xác của các mô hình, sử dụng ba tham số là Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) và Root Mean Squared Error (RMSE). Các giá trị này càng nhỏ thì mô hình càng tốt.
-\par
-\textbf{RMSE} được tính bằng cách lấy căn bậc hai của trung bình bình phương sai số giữa các giá trị dự đoán và các giá trị thực tế.
+% \par
+% \textbf{RMSE} được tính bằng cách lấy căn bậc hai của trung bình bình phương sai số giữa các giá trị dự đoán và các giá trị thực tế.
 \[
 \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
 \]
-\par
-\textbf{MAPE} còn được gọi là độ lệch phần trăm tuyệt đối trung bình. Nó thường biểu thị độ chính xác dưới dạng tỷ lệ được xác định bởi công thức:
+% \par
+% \textbf{MAPE} còn được gọi là độ lệch phần trăm tuyệt đối trung bình. Nó thường biểu thị độ chính xác dưới dạng tỷ lệ được xác định bởi công thức:
 \[
 \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100
 \]
-\par
-\textbf{MAE} được đo bằng cách tính trung bình giá trị tuyệt đối của sai số giữa giá trị thực tế và giá trị dự đoán.
+% \par
+% \textbf{MAE} được đo bằng cách tính trung bình giá trị tuyệt đối của sai số giữa giá trị thực tế và giá trị dự đoán.
 \[
 \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
 \]
