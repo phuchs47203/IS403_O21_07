@@ -36,13 +36,13 @@ Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là sai phân tại thời điểm t\\
     \indent\textbullet\ \(Y_{t},\ \ldots,\ Y_{t - d}\) là các quan sát tại hiện tại và trước đó
 
-Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ.
+Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dự báo trong quá khứ.
 \[y_{t} = c + \ \theta_{1}\varepsilon_{t - 1} + \ \theta_{2}\varepsilon_{t - 2} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
 Trong đó:\\
     \indent\textbullet\ \(y_{t}\) là trung bình trượt tại thời điểm t\\
     \indent\textbullet\ \(c\) là hệ số chặn\\
     \indent\textbullet\ \(\theta_{1},\ \ldots\ ,\ \theta_{p}\) là các tham số cần ước tính\\
-    \indent\textbullet\ \(\varepsilon_{t - 1},\ \ldots,\ \varepsilon_{t - p}\) là các lỗi dữ báo tại q bước trước đó\\
+    \indent\textbullet\ \(\varepsilon_{t - 1},\ \ldots,\ \varepsilon_{t - p}\) là các lỗi dự báo tại q bước trước đó\\
     \indent\textbullet\ \(\varepsilon_{t}\) là nhiễu trắng
 \\Kết hợp ba mô hình trên được phương trình ARIMA:
 \[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - q} + \ \varepsilon_{t}\]
@@ -64,7 +64,7 @@ Các giá trị tham số của mô hình ARIMA (p, d, q), AR(p) có thể đư�
 \[h_t = \sigma (W_{h}x_{t} + U_h h_{t-1} + b_t) \]
 \[y_t = \sigma (W_{y} h_t + b_y)\]
     \indent\textbullet\ \(h_t\): Vector lớp ẩn tại thời điểm t\\
-    \indent\textbullet\ \(X_t\): vector đầu vào tại thời điểm t\\
+    \indent\textbullet\ \(X_t\): Vector đầu vào tại thời điểm t\\
     \indent\textbullet\ \(\widehat{Y_t}\): vector đầu ra tại thời điểm t\\
     \indent\textbullet\ \(W_h\), \(U_h\), \(W_y\): Là ma trận trọng số ngẫu nhiên\\
     \indent\textbullet\ \(b_h\), \(b_y\): là các bias\\
@@ -83,7 +83,7 @@ Lặp lại quá trình trên cho đến khi hàm mất mát giảm đủ ( khô
 % =========================================
 \subsection{LSTM}
 LSTM là một mạng nơ-ron tuần tự sâu trong học sâu, cho phép thông tin tồn tại lâu dài.Đây là một loại đặc biệt của Mạng Nơ-ron Tái Phát, có khả năng xử lý vấn đề vanishing gradient gặp phải bởi RNN.\\
-\indent\textbullet\ Input: \(ct\)-1, \(ht\)-1\(ht\)-1, \(ht\)-1. Trong đó, \(xtxt\) là đầu vào tại trạng thái thứ \(t\) của mô hình. \(ct\)-1, \(ht\)-1\(ht\)-1, \(ht\)-1 là đầu ra từ lớp trước. \(h\) chơi vai trò tương tự như \(s\) trong RNN, trong khi \(c\) là điểm mới của LSTM.
+\indent\textbullet\ Input: \(ct\)-1, \(ht\)-1. Trong đó, \(xt\) là đầu vào tại trạng thái thứ \(t\) của mô hình. \(ct\)-1, \(ht\)-1 là đầu ra từ lớp trước. \(h\) với vai trò tương tự như \(s\) trong RNN, trong khi \(c\) là điểm mới của LSTM.
 
 \indent\textbullet\ Output: \(c\), \(htct\), \(ht\). Ở đây, \(c\) biểu diễn trạng thái của ô (cell state) và \(h\) biểu diễn trạng thái ẩn (hidden state).
 
@@ -128,7 +128,7 @@ Trong đó:\\
     
 % =========================================
 \subsection{VARMA}
-Vector Autoregressive Moving Average (VARMA) là sự kết hợp giữa hai mô hình: Vector tự hồi quy (VAR) là mô hình dùng để kiểm tra các mối quan hệ giữa các biến tương tác với nhau. Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dữ báo trong quá khứ. 
+Vector Autoregressive Moving Average (VARMA) là sự kết hợp giữa hai mô hình: Vector tự hồi quy (VAR) là mô hình dùng để kiểm tra các mối quan hệ giữa các biến tương tác với nhau. Trung bình trượt (MA) là mô hình thay vì sử dụng các quan sát trong quá khứ của các biến dự báo hồi quy, trung bình trượt sử dụng các lỗi dự báo trong quá khứ. 
 \par
 Mô hình VARMA được định nghĩa như sau:
 \[y_{t} = c + \ \phi_{1}y_{t - 1} + \ldots + \ \phi_{p}y_{t - p} + CD_{t} + \ \theta_{1}\varepsilon_{t - 1} + \ldots + \ \theta_{q}\varepsilon_{t - p} + \ \varepsilon_{t}\]
